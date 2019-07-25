@@ -6,7 +6,7 @@ import Booking from '../src/Booking';
 var booking
 
 beforeEach(() => {
-  booking = new Booking
+  booking = new Booking();
 });
 
 describe('Booking', function() {
@@ -16,7 +16,7 @@ describe('Booking', function() {
   });
 
   it('should be an instance of Booking', function() {
-    expect(booking.to.be.an.instanceof(Booking);
+    expect(booking).to.be.an.instanceof(Booking);
   });
 
 

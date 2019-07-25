@@ -1,9 +1,9 @@
 import $ from 'jquery';
-
+import users from '../test/users-test-data'
 
 class Customer {
-  constructor() {
-
+  constructor(user) {
+    this.name = user.name;
   }
 }
 

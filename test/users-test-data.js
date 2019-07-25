@@ -1,4 +1,4 @@
-{
+let users = {
   users: [
     {
     id: 1,
@@ -42,3 +42,5 @@
     },
   ]
 }
+
+export default users;
