@@ -1,5 +1,5 @@
-{
-  rooms: [
+const testRooms = {
+rooms: [
     {
     number: 1,
     roomType: "residential suite",
@@ -34,3 +34,5 @@
     }
   ]
 }
+
+export default testRooms

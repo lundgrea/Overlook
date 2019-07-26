@@ -1,5 +1,5 @@
-{
-  bookings: [
+const testBookings = {
+  bookings:  [
     {
     userID: 4,
     date: "2019/10/19",
@@ -37,3 +37,5 @@
     }
   ]
 }
+
+export default testBookings

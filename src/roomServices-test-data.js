@@ -1,5 +1,5 @@
-{
-  roomServices: [
+const testRoomServices = {
+roomServices: [
     {
     userID: 14,
     date: "2019/07/29",
@@ -32,3 +32,5 @@
     }
   ]
 }
+
+export default testRoomServices
