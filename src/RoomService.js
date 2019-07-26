@@ -11,6 +11,8 @@ class RoomService {
     this.food = food || [];
     this.total = total;
   }
+
+  
 }
 
 

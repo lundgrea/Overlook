@@ -3,6 +3,7 @@ import $ from 'jquery';
 let domUpdates = {
 
   pageLoadHandler() {
+    $('#aside__date').text(domUpdates.displayDate());
     $('#main__section-orders').hide()
     $('#main__section-rooms').hide()
     $('#main__section-customers').hide()
@@ -43,10 +44,8 @@ let domUpdates = {
   displayDate() {
     let today = new Date().toLocaleDateString();
     return today;
-  }
+  },
 
-
-  
   
 }
 

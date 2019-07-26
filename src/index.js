@@ -11,7 +11,6 @@ import './images/turing-logo.png'
 
 
 $(document).ready(() => {
-  $('#aside__date').text(domUpdates.displayDate());
   domUpdates.pageLoadHandler();
 
 

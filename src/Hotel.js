@@ -17,16 +17,45 @@ class Hotel {
   grandOpening() {
     //instantiate customers
     //instantiate rooms
-    //instantiate 
+    //instantiate bookings
+    //instantiate orders
   }
 
-  calculateRoomsAvailable() {
+  findRoomsAvailable() {
     //display within the aside on the dom
   }
 
-  calculatePercentageRoomsAvailable() {
+  calculatePercentageOccupancy() {
     //display within the aside on the dom
   }
+
+  calculateRevenueToday() {
+    //display within home page
+  }
+
+  calculateOrdersToday() {
+    //display within home page
+  }
+
+  selectCustomer(name) {
+  }
+
+  addNewCustomer(name) {
+  }
+
+  createNewBooking() {
+  }
+
+  createNewRoomServiceOrder() {
+  }
+
+  displayTodayRoomServiceOrders(date) {
+  }
+
+  searchRoomServiceOrdersByDate(date) {
+  }
+
+  
 
 
 }
