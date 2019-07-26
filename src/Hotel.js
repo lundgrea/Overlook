@@ -15,8 +15,20 @@ class Hotel {
   }
 
   grandOpening() {
-    
+    //instantiate customers
+    //instantiate rooms
+    //instantiate 
   }
+
+  calculateRoomsAvailable() {
+    //display within the aside on the dom
+  }
+
+  calculatePercentageRoomsAvailable() {
+    //display within the aside on the dom
+  }
+
+
 }
 
 

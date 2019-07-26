@@ -11,44 +11,28 @@ import './images/turing-logo.png'
 
 
 $(document).ready(() => {
-  $('#aside__date').text(domUpdates.displayDate())
-  $('#main__section-orders').hide()
-  $('#main__section-rooms').hide()
-  $('#main__section-customers').hide()
+  $('#aside__date').text(domUpdates.displayDate());
+  domUpdates.pageLoadHandler();
 
 
   $('#header__button-orders').click(() => {
-    console.log('order click');
-    $('#main__section-home').hide();
-    $('#main__section-rooms').hide();
-    $('#main__section-customers').hide();
-    $('#main__section-orders').show();
-  })
+    domUpdates.orderButtonHandler();
+  });
+
 
   $('#header__button-rooms').click(() => {
-    console.log('rooms click');
-    $('#main__section-home').hide();
-    $('#main__section-orders').hide();
-    $('#main__section-customers').hide();
-    $('#main__section-rooms').show();
-  })
+    domUpdates.roomButtonHandler();
+  });
 
   $('#header__button-customers').click(() => {
-    console.log('customers click');
-    $('#main__section-home').hide();
-    $('#main__section-orders').hide();
-    $('#main__section-rooms').hide();
-    $('#main__section-customers').show();
-  })
+    domUpdates.customerButtonHandler();
+
+  });
 
   $('#header__button-home').click(() => {
-    console.log('home click')
-    $('#main__section-orders').hide();
-    $('#main__section-rooms').hide();
-    $('#main__section-customers').hide();
-    $('#main__section-home').show();
-    
-  })
+    domUpdates.homeButtonHandler();
+
+  });
 
 
 
