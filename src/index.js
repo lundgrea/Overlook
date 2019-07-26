@@ -9,6 +9,7 @@ import domUpdates from './domUpdates.js';
 import './images/turing-logo.png'
 
 $(document).ready(() => {
+  $('#aside__date').text(domUpdates.displayDate())
 })
 
 console.log('This is the JavaScript entry file - your code begins here.');
