@@ -1,6 +1,79 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+$color-primary: #37384E;
+$color-secondary: #623842;
 
-body {
-  background-color: $primary-background;
+* {
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+}
+
+body{
+  /*display: grid;
+  grid-template-areas: 
+    "header header header"
+    "aside main main";
+  grid-template-columns: 340px 1fr 1fr;
+  grid-template-rows: 26.8% auto;*/
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+}
+
+
+h1 {
+  font-family: Montserrat;
+  display: inline-block;
+  margin: 40px 0px 40px 35px;
+  font-size: 67px;
+  color: lightgrey;
+  font-weight: 400;
+}
+
+.logo-thin {
+  font-weight: 700;
+}
+
+ul, 
+li {
+  display: inline-block;
+    float: right;
+
+}
+ul{
+  margin: 55px 50px 50px 0px;
+  color: lightgrey;
+  font-size: 22px;
+}
+
+li{
+  margin: 10px 10px 10px 10px;
+}
+
+
+header {
+  background-color: $color-primary;
+  grid-area: header;
+  height: 170px;
+}
+
+aside{
+  background-color: $color-secondary;
+  grid-area: aside;
+  color: lightgrey;
+  text-align: center;
+  margin-top: 0px;
+  float: left;
+  width: 400px;
+
+}
+
+.aside__bignum {
+  font-size: 70px;
+    margin: 0px 0px 0px 0px;
+}
+
+main{
+  grid-area: main;
+
 }
