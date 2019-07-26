@@ -2,12 +2,12 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Booking from '../src/Booking';
-import sampleBookings from '../src/bookings-test-data'
+import testBookings from '../src/bookings-test-data'
 
 let booking
 
 beforeEach(() => {
-  booking = new Booking(sampleBookings, 4, '2019/10/19', 5);
+  booking = new Booking(4, '2019/10/19', 5);
 });
 
 describe('Booking', function() {
@@ -31,6 +31,5 @@ describe('Booking', function() {
   it('should have a room number', function() {
     expect(booking.roomNumber).to.equal(5)
   })
-
 
 });

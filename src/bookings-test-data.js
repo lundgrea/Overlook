@@ -1,4 +1,4 @@
-const sampleBookings = {
+const testBookings = {
   bookings:  [
     {
     userID: 4,
@@ -38,4 +38,4 @@ const sampleBookings = {
   ]
 }
 
-export default sampleBookings
+export default testBookings
