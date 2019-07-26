@@ -68,14 +68,40 @@ aside{
   height: 100%;;
 }
 
-svg {
-  filter: invert(1);
+.aside__button {
+  filter: invert(.27);
+  background-color: lightgrey;
+  max-height: 40px;
+  padding: 5px;
+}
+
+.aside__button-search {
+  min-width: 40px;
+}
+
+.aside__button-add {
+    padding: 9px 0px 9px 0px;
 }
 
 .aside__bignum {
   font-size: 70px;
+  margin: 0px 0px 0px 0px;
+}
+
+.aside__input-container {
+  display: flex;  
+  margin: 0px 0px 20px 35px;
+}
+
+input{
+    height: 40px;
+    width: 70%;
     margin: 0px 0px 0px 0px;
 }
+
+::placeholder {
+  font-size: 14px;
+    padding: 10px;}
 
 main{
   grid-area: main;
