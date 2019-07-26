@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Webpack Starter Kit</title>
+    <title>Overlook Hotel Management</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Webpack Starter Kit</h1>
-
-    <img src="/images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
-    <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
+    <header>
+      <h1 class="header__logo" class="header__logo">over<span class="logo-thin">LOOK</span></h1>
+      <ul>
+        <li class="header__buttons" id="header__button-main">Home</li>
+        <li class="header__butons" id="header__button-customers">Customers</li>
+        <li class="header__butons" id="header__button-rooms">Rooms</li>
+        <li class="header__butons" id="header__button-orders">Orders</li>
+      </ul>
+    </header>
+    <aside>
+      <h2 class="aside aside__date" id="aside__date">DATE</h2>
+      <h3 class="aside aside__bignum" id="aside__bignum-number">#</h3>
+      <h4 class="aside aside__bignum-description" id="aside__bignum-number-description">rooms available today</h4>
+      <h3 class="aside aside__bignum" id="aside__bignum-percentage">%</h3>
+      <h4 class="aside aside__bignum-description" id="aside__bignum-percentage-description">percentage occupancy</h4>
+      <div class="aside__input-container" id="aside__input-container-search">
+        <img class="aside__input aside__button" id="aside__button-search" src="/images/turing-logo.png" alt="Customer Search Button" height="20px" width="20px">
+        <input class="aside__input aside__input-search" id="aside__input-search" type="text" placeholder="Customer Search">
+      </div>
+       <div class="aside__input-container" id="aside__input-container-add">
+        <img class="aside__input aside__button" id="aside__button-add" src="/images/turing-logo.png" alt="Add Customer Button" height="20px" width="20px">
+        <input class="aside__input aside__input-add" id="aside__input-add" type="text" placeholder="Add New Customer">
+      </div>
+    </aside>
+    <main>
+    </main>
   </body>
 </html>
