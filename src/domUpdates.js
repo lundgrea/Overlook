@@ -6,6 +6,9 @@ let domUpdates = {
     let today = new Date().toLocaleDateString();
     return today;
   }
+
+
+  
   
 }
 
