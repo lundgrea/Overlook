@@ -2,11 +2,15 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Hotel from '../src/Hotel';
+import testUsers from '../src/users-test-data';
+import testRoomServices from '../src/roomServices-test-data';
+import testRooms from '../src/rooms-test-data';
+import sampleBookings from '../src/bookings-test-data';
 
-var hotel
+let hotel
 
 beforeEach(() => {
-  hotel = new Hotel
+  hotel = new Hotel();
 });
 
 describe('Hotel', function() {

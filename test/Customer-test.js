@@ -2,14 +2,13 @@ import chai from 'chai';
 const expect = chai.expect;
 
 import Customer from '../src/Customer';
-import users from '../test/users-test-data';
+import testUsers from '../src/users-test-data';
 
-
-var customer1, customer2;
+let customer1, customer2
 
 beforeEach(() => {
-  customer1 = new Customer(users.users[0])
-  customer2 = new Customer(users.users[1])
+  customer1 = new Customer(testUsers.users[0])
+  customer2 = new Customer(testUsers.users[1])
 });
 
 describe('Customer', function() {

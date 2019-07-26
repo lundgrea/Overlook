@@ -1,4 +1,5 @@
-[
+const sampleBookings = {
+  bookings:  [
     {
     userID: 4,
     date: "2019/10/19",
@@ -35,3 +36,6 @@
     roomNumber: 34
     }
   ]
+}
+
+export default sampleBookings

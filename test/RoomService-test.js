@@ -3,7 +3,8 @@ const expect = chai.expect;
 
 import RoomService from '../src/RoomService';
 
-var roomService
+
+let roomService
 
 beforeEach(() => {
   roomService = new RoomService

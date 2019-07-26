@@ -1,5 +1,5 @@
-let users = {
-  users: [
+const testUsers = {
+    users: [
     {
     id: 1,
     name: "Matilde Larson"
@@ -43,4 +43,5 @@ let users = {
   ]
 }
 
-export default users;
+
+export default testUsers;

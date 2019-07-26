@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import users from '../test/users-test-data'
+import testUsers from '../src/users-test-data';
 
 class Customer {
   constructor(user) {
