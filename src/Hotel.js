@@ -21,6 +21,9 @@ class Hotel {
     //instantiate orders
   }
 
+  findCustomer(ID) {
+  }
+
   findRoomsAvailable() {
     //display within the aside on the dom
   }
@@ -55,7 +58,7 @@ class Hotel {
   searchRoomServiceOrdersByDate(date) {
   }
 
-  
+
 
 
 }

@@ -7,12 +7,7 @@ class Customer {
     this.name = user.name;
   }
 
-  findCustomer(ID) {
-
-  }
-
   displayCustomerInformation() {
-
   }
 
 }
