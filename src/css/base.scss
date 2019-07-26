@@ -9,12 +9,12 @@ $color-secondary: #623842;
 }
 
 body{
-  /*display: grid;
+  display: grid;
   grid-template-areas: 
     "header header header"
     "aside main main";
   grid-template-columns: 340px 1fr 1fr;
-  grid-template-rows: 26.8% auto;*/
+  grid-template-rows: 20% auto;
   height: 100vh;
   margin: 0;
   width: 100%;
@@ -105,5 +105,11 @@ input{
 
 main{
   grid-area: main;
+  background-color: blanchedalmond;
+}
 
+.main__section-orders {
+  background-color: rebeccapurple;
+  float:right;
+  width:100px;
 }
