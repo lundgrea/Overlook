@@ -17,9 +17,9 @@
     </header>
     <aside>
       <h2 class="aside aside__date" id="aside__date"></h2>
-      <h3 class="aside aside__bignum" id="aside__bignum-number">#</h3>
+      <h3 class="aside aside__bignum bignum" id="aside__bignum-number">#</h3>
       <h4 class="aside aside__bignum-description" id="aside__bignum-number-description">rooms available today</h4>
-      <h3 class="aside aside__bignum" id="aside__bignum-percentage">%</h3>
+      <h3 class="aside aside__bignum bignum" id="aside__bignum-percentage">%</h3>
       <h4 class="aside aside__bignum-description" id="aside__bignum-percentage-description">percentage occupancy</h4>
       <div class="aside__input-container" id="aside__input-container-search">
         <img class="aside__input aside__button" id="aside__button-search" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="Customer Search Button" height="40px" width="40px">
@@ -32,7 +32,16 @@
     </aside>
     <main>
       <section class="main__section" id="main__section-home">
-        <h5>home</h5>
+        <article class="display-revenue">
+          <h3 class="main main__bignum bignum" id="main__bignum-revenue">$</h3>
+          <h4 class="main main__bignum-description" id="main__bignum-number-description">revenue</h4>
+        </article>
+        <article class="display-revenue">
+          <h3 class="main main__bignum bignum" id="main__bignum-service-charges">$</h3>
+          <h4 class="main main__bignum-description" id="main__bignum-percentage-description">orders</h4>
+        </article>
+        <h6>TODAY</h6>
+        <h5>Search for Current Customer or Add New Customer Within SideBar</h5>
       </section>
       <section class="main__section" id="main__section-orders">
         <h5>orders</h5>

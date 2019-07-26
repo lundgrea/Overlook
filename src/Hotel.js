@@ -13,6 +13,10 @@ class Hotel {
     this.allBookings = bookings;
     this.allRoomServiceOrders = orders;
   }
+
+  grandOpening() {
+    
+  }
 }
 
 

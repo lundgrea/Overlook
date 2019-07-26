@@ -83,10 +83,11 @@ aside{
     padding: 9px 0px 9px 0px;
 }
 
-.aside__bignum {
+.bignum {
   font-size: 70px;
   margin: 0px 0px 0px 0px;
 }
+
 
 .aside__input-container {
   display: flex;  
@@ -106,10 +107,19 @@ input{
 main{
   grid-area: main;
   background-color: blanchedalmond;
+  color: #37384E;
 }
 
-.main__section-orders {
-  background-color: rebeccapurple;
-  float:right;
-  width:100px;
+.main__section {
+  text-align: center;
+  font-size: 16px;
+}
+
+h6{
+  margin: 0px 0px 150px 0px;
+}
+
+.display-revenue{
+  display: inline-block;
+    margin: 35px 50px 15px 50px;
 }
