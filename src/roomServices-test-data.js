@@ -36,6 +36,13 @@ roomServices: [
     food: "Unbranded Wooden Sandwich",
     totalCost: 7.95
     },
+    //i added this one, completely made up//
+    {
+    userID: 67,
+    date: "2019/10/19",
+    food: "Unbranded Wooden Sandwich",
+    totalCost: 7.95
+    },
   ]
 }
 

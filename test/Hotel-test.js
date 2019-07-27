@@ -57,6 +57,26 @@ describe('Hotel', function() {
     expect(hotel.allBookings).to.be.a('array');
   });
 
+   it('should start with no information for rooms available', function() {
+    expect(hotel.todaysAvailableRoomCount).to.equal(null);
+  });
+
+  it('should start with no information for percentage occupancy', function() {
+    expect(hotel.todaysPercentageOccupied).to.equal(null);
+  });
+
+  it('should start with no information for todays order revenue', function() {
+    expect(hotel.todaysTotalOrderRevenue).to.equal(null);
+  });
+
+  it('should start with no information for todays total revenue', function() {
+    expect(hotel.todaysTotalRevenue).to.equal(null);
+  });
+
+  it('should start with no information for todays orders', function() {
+    expect(hotel.todaysOrders).to.equal(null);
+  });
+
   it('should be able to find specific customers by their ID', function() {
     hotel.findCustomer(7);
     expect(hotel.currentCustomer).to.eql([{"id": 7, "name": "Josianne Huels"}])
@@ -71,18 +91,25 @@ describe('Hotel', function() {
   it('should tell you the number of rooms available', function() {
     hotel.findBookedRooms('2019/10/29')
     hotel.findNumberRoomsAvailable()
-    expect(hotel.todaysAvailableRoomCount).to.equal(3)
+    expect(hotel.todaysAvailableRoomCount).to.equal(5)
   });
 
   it('should be able to tell you the percentage occupied for the given date', function() {
     hotel.findBookedRooms('2019/10/29')
     hotel.calculatePercentageOccupancy()
-    expect(hotel.percentageOccupied).to.equal(40)
+    expect(hotel.percentageOccupied).to.equal('29')
+  });
+
+  it('should be able to tell you the total room serivce order revenue from a given date', function() {
+    hotel.calculateOrdersToday('2019/10/18');
+    expect(hotel.todaysTotalOrderRevenue).to.equal('25.28')
   });
 
   it('should be able to tell you the total revenue from a given date', function() {
-    hotel.calculateOrdersToday('2019/10/18');
-    expect(hotel.todaysTotalOrderRevenue).to.equal('25.28')
+    hotel.calculateOrdersToday('2019/10/19')
+    expect(hotel.todaysTotalOrderRevenue).to.equal('7.95')
+    hotel.calculateRevenueToday('2019/10/19');
+    expect(hotel.todaysTotalRevenue).to.equal(484.40)
   });
 
 });

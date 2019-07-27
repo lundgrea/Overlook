@@ -33,6 +33,22 @@ rooms: [
     costPerNight: 177.03
     },
     {
+    number: 5,
+    roomType: "junior suite",
+    bidet: false,
+    bedSize: "king",
+    numBeds: 2,
+    costPerNight: 246.65
+    },
+    {
+    number: 16,
+    roomType: "single room",
+    bidet: true,
+    bedSize: "king",
+    numBeds: 1,
+    costPerNight: 229.8
+    },
+    {
     number: 34,
     roomType: "single room",
     bidet: true,

@@ -19,7 +19,9 @@ class Hotel {
     this.todaysBookings = [];
     this.todaysAvailableRoomCount = null;
     this.todaysPercentageOccupied = null;
+    this.todaysOrders = null
     this.todaysTotalOrderRevenue = null;
+    this.todaysTotalRevenue = null;
   }
 
   grandOpening() {
@@ -28,6 +30,7 @@ class Hotel {
     this.findNumberRoomsAvailable();
     this.calculatePercentageOccupancy()
     this.calculateOrdersToday(this.date);
+    this.calculateRevenueToday(this.date)
   }
 
   getToday() {
@@ -43,7 +46,7 @@ class Hotel {
   }
 
   calculatePercentageOccupancy() {
-    this.percentageOccupied = (this.todaysBookings.length / this.allRooms.length) * 100
+    this.percentageOccupied = ((this.todaysBookings.length / this.allRooms.length) * 100).toFixed()
   }
 
   findCustomer(ID) {
@@ -51,15 +54,26 @@ class Hotel {
   }
 
   calculateOrdersToday(theDate) {
-    let todaysOrders = this.allRoomServiceOrders.filter(order => order.date === theDate)
-    let totalOrderPrices = todaysOrders.map(order => order.totalCost)
+    this.todaysOrders = this.allRoomServiceOrders.filter(order => order.date === theDate)
+    let totalOrderPrices = this.todaysOrders.map(order => order.totalCost)
     this.todaysTotalOrderRevenue = totalOrderPrices.reduce((total, item) => {
       return total += item
     }, 0).toFixed(2)
   }
 
-  calculateRevenueToday() {
-    //display within home page
+  calculateRevenueToday(theDate) {
+    let todaysRentedRooms = this.allBookings.filter(booking => booking.date === theDate)
+    let todaysRentedRoomNumbers = todaysRentedRooms.map(room => room.roomNumber)
+    let roomRentalIncome = todaysRentedRoomNumbers.reduce((total, roomNumber) => {
+      this.allRooms.forEach(room => {
+        if(roomNumber === room.number) {
+          total += room.costPerNight
+        }
+      })
+      return total
+    }, 0)
+    this.todaysTotalRevenue = Number(roomRentalIncome) + Number(this.todaysTotalOrderRevenue)
+    this.todaysTotalRevenue = this.todaysTotalRevenue.toFixed(2)
   }
 
 
