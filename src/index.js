@@ -35,6 +35,14 @@ Promise.all([usersFetch, bookingsFetch, roomsFetch, roomServiceFetch])
 
 $(document).ready(() => {
   domUpdates.pageLoadHandler();
+  
+  setTimeout(function() {
+    hotel.grandOpening();
+    $('#aside__date').text(hotel.date)
+    $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
+    $('#aside__bignum-percentage-span').text(hotel.percentageOccupied)
+  }, 3000);
+
 
   $('#header__button-orders').click(() => {
     domUpdates.orderButtonHandler();

@@ -22,13 +22,13 @@ class Hotel {
   }
 
   grandOpening() {
-    getToday();
+    this.getToday();
     console.log('grandOpening date' , this.date)
-    findBookedRooms(this.date);
+    this.findBookedRooms(this.date);
     console.log('grandOpening bookings', this.todaysBookings)
-    findNumberRoomsAvailable();
+    this.findNumberRoomsAvailable();
     console.log('grandOpening availabilties', this.todaysAvailableRoomCount)
-    calculatePercentageOccupancy()
+    this.calculatePercentageOccupancy()
     console.log('grandOpening occupancy', this.percentageOccupied)
   }
 

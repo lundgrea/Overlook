@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Hotel from '../src/Hotel';
 
 let domUpdates = {
 
@@ -11,9 +12,11 @@ let domUpdates = {
     $('.page').delay(2000).fadeIn("slow");
   },
 
-
-  displayRoomsAvailable() {
+  displayRoomsAvailable(){
+    $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount)
   },
+
+
 
   orderButtonHandler() {
     console.log('order click');
