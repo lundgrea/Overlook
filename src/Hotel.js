@@ -49,8 +49,13 @@ class Hotel {
     this.todaysPercentageOccupied = ((this.todaysBookings.length / this.allRooms.length) * 100).toFixed()
   }
 
-  findCustomer(ID) {
+  findCustomerById(ID) {
     this.currentCustomer = this.allCustomers.filter(customer => customer.id === ID)
+  }
+
+  findCustomerByName(theName) {
+    this.currentCustomer = this.allCustomers.find(person => person.name.toUpperCase() === theName.toUpperCase())
+    console.log(this.currentCustomer)
   }
 
   calculateOrdersToday(theDate) {
@@ -75,7 +80,6 @@ class Hotel {
     this.todaysTotalRevenue = Number(roomRentalIncome) + Number(this.todaysTotalOrderRevenue)
     this.todaysTotalRevenue = this.todaysTotalRevenue.toFixed(2)
   }
-
 
   selectCustomer(name) {
   }

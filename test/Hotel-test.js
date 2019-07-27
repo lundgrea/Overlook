@@ -78,8 +78,13 @@ describe('Hotel', function() {
   });
 
   it('should be able to find specific customers by their ID', function() {
-    hotel.findCustomer(7);
+    hotel.findCustomerById(7);
     expect(hotel.currentCustomer).to.eql([{"id": 7, "name": "Josianne Huels"}])
+  });
+
+  it('should be able to find specific customers by their name', function() {
+    hotel.findCustomerByName('Josianne Huels');
+    expect(hotel.currentCustomer).to.eql({"id": 7, "name": "Josianne Huels"})
   });
 
   it('should be able to find available rooms', function(){
