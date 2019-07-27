@@ -9,12 +9,11 @@ import domUpdates from './domUpdates.js';
 import './images/turing-logo.png'
 
 
-
-const hotel;
+// const hotel;
 
 $(document).ready(() => {
   domUpdates.pageLoadHandler();
-   $('aside__bignum-number').text(hotel.findNumberRoomsAvailable())
+   // $('aside__bignum-number').text(hotel.findNumberRoomsAvailable())
 
   $('#header__button-orders').click(() => {
     domUpdates.orderButtonHandler();
