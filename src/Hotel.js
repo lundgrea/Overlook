@@ -17,6 +17,7 @@ class Hotel {
     this.allRoomServiceOrders = orders;
     this.currentCustomer = {};
     this.todaysBookings = [];
+    this.availableRoomCount = null;
   }
 
   grandOpening() {
@@ -27,9 +28,14 @@ class Hotel {
     this.currentCustomer = this.allCustomers.filter(customer => customer.id === ID)
   }
 
-  findRoomsAvailable(theDate) {
+  findBookedRooms(theDate) {
     this.todaysBookings = this.allBookings.filter(booking => booking.date === theDate)
   }
+
+  findNumberRoomsAvailable() {
+    this.availableRoomCount = this.allRooms.length - this.todaysBookings.length
+  }
+
 
   calculatePercentageOccupancy() {
     //display within the aside on the dom
