@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import testUsers from '../src/users-test-data';
+import Hotel from '../src/Hotel'
+
 
 class Customer {
   constructor(user) {
@@ -9,6 +11,16 @@ class Customer {
 
   displayCustomerInformation() {
   }
+
+  updateBooking() {
+  }
+
+  cancelBooking() {
+  }
+
+  addBooking() {
+  }
+
 
 }
 

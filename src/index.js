@@ -10,14 +10,14 @@ import './images/turing-logo.png'
 
 
 
+
+
 $(document).ready(() => {
   domUpdates.pageLoadHandler();
-
 
   $('#header__button-orders').click(() => {
     domUpdates.orderButtonHandler();
   });
-
 
   $('#header__button-rooms').click(() => {
     domUpdates.roomButtonHandler();
@@ -25,15 +25,11 @@ $(document).ready(() => {
 
   $('#header__button-customers').click(() => {
     domUpdates.customerButtonHandler();
-
   });
 
   $('#header__button-home').click(() => {
     domUpdates.homeButtonHandler();
-
   });
-
-
 
 })
 
