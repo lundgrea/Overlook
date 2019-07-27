@@ -31,6 +31,14 @@ rooms: [
     bedSize: "full",
     numBeds: 1,
     costPerNight: 177.03
+    },
+    {
+    number: 34,
+    roomType: "single room",
+    bidet: true,
+    bedSize: "king",
+    numBeds: 2,
+    costPerNight: 329.96
     }
   ]
 }

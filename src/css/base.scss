@@ -24,7 +24,7 @@ body{
 h1 {
   font-family: Montserrat;
   display: inline-block;
-  margin: 40px 0px 40px 35px;
+  margin: 20px 0px 40px 35px;
   font-size: 67px;
   color: lightgrey;
   font-weight: 400;
@@ -41,7 +41,7 @@ li {
 
 }
 ul{
-  margin: 55px 50px 50px 0px;
+  margin: 40px 50px 50px 0px;
   color: lightgrey;
   font-size: 22px;
 }
@@ -83,17 +83,18 @@ aside{
     padding: 9px 0px 9px 0px;
 }
 
-.aside__bignum {
+.bignum {
   font-size: 70px;
   margin: 0px 0px 0px 0px;
 }
 
+
 .aside__input-container {
   display: flex;  
-  margin: 0px 0px 20px 35px;
+  margin: 0px 0px 20px 40px;
 }
 
-input{
+input {
     height: 40px;
     width: 70%;
     margin: 0px 0px 0px 0px;
@@ -103,13 +104,32 @@ input{
   font-size: 14px;
     padding: 10px;}
 
-main{
+main {
   grid-area: main;
   background-color: blanchedalmond;
+  color: #37384E;
 }
 
-.main__section-orders {
-  background-color: rebeccapurple;
-  float:right;
-  width:100px;
+.main__section {
+  text-align: center;
+  font-size: 16px;
+}
+
+
+h5 {
+  font-size: 28px;
+  margin: 25px 0px 0px 0px;
+  font-weight: 700;
+  padding: 0px;
+  text-align: center;
+}
+
+h6 {
+  margin: 0px 0px 150px 0px;
+}
+
+.display-revenue, 
+.display-record {
+  display: inline-block;
+  margin: 35px 71px 0px 71px;
 }
