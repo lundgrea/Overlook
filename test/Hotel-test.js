@@ -54,8 +54,9 @@ describe('Hotel', function() {
   });
 
   it('should be able to find available rooms', function(){
-    hotel.findRoomsAvailable('2019/10/30')
-    expect(hotel.availableRooms).to.eql()
+    hotel.findRoomsAvailable('2019/10/29')
+    expect(hotel.todaysBookings).to.eql([ { userID: 93, date: '2019/10/29', roomNumber: 34 },
+  { userID: 86, date: '2019/10/29', roomNumber: 2 } ])
   })
 
 });

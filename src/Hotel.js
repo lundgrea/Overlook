@@ -15,8 +15,8 @@ class Hotel {
     this.allRooms = rooms;
     this.allBookings = bookings;
     this.allRoomServiceOrders = orders;
-    this.currentCustomer = {}
-    this.availableRooms = []
+    this.currentCustomer = {};
+    this.todaysBookings = [];
   }
 
   grandOpening() {
@@ -27,9 +27,8 @@ class Hotel {
     this.currentCustomer = this.allCustomers.filter(customer => customer.id === ID)
   }
 
-  findRoomsAvailable(date) {
-    this.availableRooms = this.allBookings.filter(booking => booking.date !== date) 
-    console.log(this.availableRooms)
+  findRoomsAvailable(theDate) {
+    this.todaysBookings = this.allBookings.filter(booking => booking.date === theDate)
   }
 
   calculatePercentageOccupancy() {
