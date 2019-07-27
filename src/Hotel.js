@@ -9,11 +9,11 @@ import Booking from '../src/Booking';
 import RoomService from '../src/RoomService';
 
 class Hotel {
-  constructor(date, customers, rooms, bookings, orders) {
-    this.date = date;
+  constructor(customers, bookings, rooms,  orders) {
+    // this.date = date;
     this.allCustomers = customers;
-    this.allRooms = rooms;
     this.allBookings = bookings;
+    this.allRooms = rooms;
     this.allRoomServiceOrders = orders;
     this.currentCustomer = {};
     this.todaysBookings = [];
@@ -33,7 +33,8 @@ class Hotel {
     this.todaysBookings = this.allBookings.filter(booking => booking.date === theDate)
   }
 
-  findNumberRoomsAvailable() {
+  findNumberRoomsAvailable(theDate) {
+    findBookedRooms(theDate)
     this.todaysAvailableRoomCount = this.allRooms.length - this.todaysBookings.length
   }
 
