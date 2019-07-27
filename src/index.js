@@ -13,26 +13,29 @@ import './images/turing-logo.png'
 
 let hotel
 
-let users = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users").then(response => response.json());
-let bookings = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings").then(response => response.json());
-let rooms = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms").then(response => response.json());
-let roomService = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices").then(response => response.json());
+let usersFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users").then(response => response.json());
+let bookingsFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings").then(response => response.json());
+let roomsFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms").then(response => response.json());
+let roomServiceFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices").then(response => response.json());
 
-Promise.all([users, bookings, rooms, roomService])
-  .then(data => startApp(data))
+let allData = {'users': [] , 'bookings' : [] , 'rooms' : [], 'roomService' :[] }
+
+Promise.all([usersFetch, bookingsFetch, roomsFetch, roomServiceFetch])
+  .then(function(data) {
+      allData['users'] = data[0].users;
+      allData['bookings'] = data[1].bookings;
+      allData['rooms'] = data[2].rooms;
+      allData['roomService'] = data[3].roomServices;
+      return allData
+    })
+  .then(data => hotel = new Hotel(data))
+  // .then(startApp())
   .catch(err => console.log('fetch error'));
 
-function startApp(fetchedInfo) {
-  console.log('FETCHEDINFO :', fetchedInfo)
-  hotel = new Hotel(fetchedInfo[0],fetchedInfo[1], fetchedInfo[2], fetchedInfo[3]);
-  console.log(hotel);
-  fetchHandler()
-}
-
-function fetchHandler(){
-  $('aside__bignum-number').text(hotel.findNumberRoomsAvailable(domUpdates.displayDate))
-
-}
+// function startApp() {
+//   console.log('inside the function');
+//   domUpdates.postFetchPageLoadHandler();
+// }
 
 $(document).ready(() => {
   domUpdates.pageLoadHandler();
