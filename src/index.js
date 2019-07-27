@@ -38,10 +38,11 @@ $(document).ready(() => {
   
   setTimeout(function() {
     hotel.grandOpening();
-    $('#aside__date').text(hotel.date)
+    $('#aside__date').text(hotel.date);
     $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
-    $('#aside__bignum-percentage-span').text(hotel.todaysPercentageOccupied)
-    $('#main__bignum-service-charges').text(hotel.todaysTotalOrderRevenue)
+    $('#aside__bignum-percentage-span').text(hotel.todaysPercentageOccupied);
+    $('#main__bignum-service-charges').text(hotel.todaysTotalOrderRevenue);
+    $('#main__bignums-revenue-span').text(hotel.todaysTotalRevenue)
   }, 3000);
 
 
