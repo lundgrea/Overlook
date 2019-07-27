@@ -46,7 +46,7 @@ class Hotel {
   }
 
   calculatePercentageOccupancy() {
-    this.percentageOccupied = ((this.todaysBookings.length / this.allRooms.length) * 100).toFixed()
+    this.todaysPercentageOccupied = ((this.todaysBookings.length / this.allRooms.length) * 100).toFixed()
   }
 
   findCustomer(ID) {
