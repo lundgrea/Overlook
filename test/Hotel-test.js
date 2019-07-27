@@ -9,13 +9,21 @@ import testRoomServices from '../src/roomServices-test-data';
 import testBookings from '../src/bookings-test-data';
 
 let hotel;
-let users = testUsers.users;
-let rooms = testRooms.rooms;
-let bookings = testBookings.bookings;
-let orders = testRoomServices.roomServices;
+// let users = testUsers.users;
+// let bookings = testBookings.bookings;
+// let rooms = testRooms.rooms;
+// let orders = testRoomServices.roomServices;
+
+let info = 
+  {
+  'users': testUsers.users, 
+  'bookings' : testBookings.bookings, 
+  'rooms': testRooms.rooms, 
+  'roomService': testRoomServices.roomServices
+  };
 
 beforeEach(() => {
-  hotel = new Hotel('2019/07/26', users, rooms, bookings, orders);
+  hotel = new Hotel(info);
 });
 
 describe('Hotel', function() {
@@ -28,13 +36,9 @@ describe('Hotel', function() {
     expect(hotel).to.be.an.instanceof(Hotel);
   });
 
-  it('should be able to figure out the date' function(){
-    hotel.grandOpening();
-    expect(hotel.date).to.equal()
-  });
-
-  it('should know what day today is', function() {
-    expect(hotel.date).to.equal('2019/07/26') ;
+  it('should be able to figure out the date', function(){
+    hotel.getToday();
+    expect(hotel.date).to.equal('7/27/2019')
   });
 
   it('should manage all hotel guests', function() {
