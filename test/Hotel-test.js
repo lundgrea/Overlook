@@ -62,8 +62,13 @@ describe('Hotel', function() {
   it('should tell you the number of rooms available', function() {
     hotel.findBookedRooms('2019/10/29')
     hotel.findNumberRoomsAvailable()
-    expect(hotel.availableRoomCount).to.equal(3)
+    expect(hotel.todaysAvailableRoomCount).to.equal(3)
+  });
 
+  it('should be able to tell you the percentage occupied for the given date', function() {
+    hotel.findBookedRooms('2019/10/29')
+    hotel.calculatePercentageOccupancy()
+    expect(hotel.percentageOccupied).to.equal(40)
   });
 
 });

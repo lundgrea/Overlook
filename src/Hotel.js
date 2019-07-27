@@ -17,7 +17,8 @@ class Hotel {
     this.allRoomServiceOrders = orders;
     this.currentCustomer = {};
     this.todaysBookings = [];
-    this.availableRoomCount = null;
+    this.todaysAvailableRoomCount = null;
+    this.percentageOccupied = null;
   }
 
   grandOpening() {
@@ -33,12 +34,11 @@ class Hotel {
   }
 
   findNumberRoomsAvailable() {
-    this.availableRoomCount = this.allRooms.length - this.todaysBookings.length
+    this.todaysAvailableRoomCount = this.allRooms.length - this.todaysBookings.length
   }
 
-
   calculatePercentageOccupancy() {
-    //display within the aside on the dom
+    this.percentageOccupied = (this.todaysBookings.length / this.allRooms.length) * 100
   }
 
   calculateRevenueToday() {
