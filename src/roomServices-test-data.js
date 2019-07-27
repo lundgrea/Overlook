@@ -29,7 +29,20 @@ roomServices: [
     date: "2019/09/26",
     food: "Fantastic Cotton Sandwich",
     totalCost: 17.61
-    }
+    },
+    {
+    userID: 55,
+    date: "2019/10/18",
+    food: "Unbranded Wooden Sandwich",
+    totalCost: 7.95
+    },
+    //i added this one, completely made up//
+    {
+    userID: 67,
+    date: "2019/10/19",
+    food: "Unbranded Wooden Sandwich",
+    totalCost: 7.95
+    },
   ]
 }
 
