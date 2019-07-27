@@ -29,13 +29,9 @@ Promise.all([usersFetch, bookingsFetch, roomsFetch, roomServiceFetch])
       return allData
     })
   .then(data => hotel = new Hotel(data))
-  // .then(startApp())
+  .then(hotel => console.log(hotel))
   .catch(err => console.log('fetch error'));
 
-// function startApp() {
-//   console.log('inside the function');
-//   domUpdates.postFetchPageLoadHandler();
-// }
 
 $(document).ready(() => {
   domUpdates.pageLoadHandler();
