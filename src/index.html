@@ -6,7 +6,10 @@
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
+    <article class="splash">
+      <h1>Welcome To Outlook Hotel Management</h2>
+    </article>
+    <header class="page">
       <h1 class="header__logo" class="header__logo">over<span class="logo-thin">LOOK</span></h1>
       <ul>
         <li class="header__buttons" id="header__button-orders">orders</li>
@@ -15,11 +18,11 @@
         <li class="header__buttons" id="header__button-home">home</li>
       </ul>
     </header>
-    <aside>
+    <aside class="page">
       <h2 class="aside aside__date" id="aside__date"></h2>
-      <h3 class="aside aside__bignum bignum" id="aside__bignum-number">#</h3>
+      <h3 class="aside aside__bignum bignum" id="aside__bignum-number"></h3>
       <h4 class="aside aside__bignum-description" id="aside__bignum-number-description">rooms available today</h4>
-      <h3 class="aside aside__bignum bignum" id="aside__bignum-percentage">%</h3>
+      <h3 class="aside aside__bignum bignum"><span id="aside__bignum-percentage-span"></span>%</h3>
       <h4 class="aside aside__bignum-description" id="aside__bignum-percentage-description">percentage occupancy</h4>
       <div class="aside__input-container" id="aside__input-container-search">
         <img class="aside__input aside__button" id="aside__button-search" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="Customer Search Button" height="40px" width="40px">
@@ -30,7 +33,7 @@
         <input class="aside__input aside__input-add" id="aside__input-add" type="text" placeholder="Add New Customer">
       </div>
     </aside>
-    <main>
+    <main class="page">
       <section class="main__section" id="main__section-home">
       <h5>home</h5>
         <article class="display-revenue">

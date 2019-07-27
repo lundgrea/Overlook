@@ -28,6 +28,11 @@ describe('Hotel', function() {
     expect(hotel).to.be.an.instanceof(Hotel);
   });
 
+  it('should be able to figure out the date' function(){
+    hotel.grandOpening();
+    expect(hotel.date).to.equal()
+  });
+
   it('should know what day today is', function() {
     expect(hotel.date).to.equal('2019/07/26') ;
   });

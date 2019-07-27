@@ -11,9 +11,38 @@ import './images/turing-logo.png'
 
 // const hotel;
 
+let hotel
+
+let usersFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users").then(response => response.json());
+let bookingsFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings").then(response => response.json());
+let roomsFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms").then(response => response.json());
+let roomServiceFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/room-services/roomServices").then(response => response.json());
+
+let allData = {'users': [] , 'bookings' : [] , 'rooms' : [], 'roomService' :[] }
+
+Promise.all([usersFetch, bookingsFetch, roomsFetch, roomServiceFetch])
+  .then(function(data) {
+      allData['users'] = data[0].users;
+      allData['bookings'] = data[1].bookings;
+      allData['rooms'] = data[2].rooms;
+      allData['roomService'] = data[3].roomServices;
+      return allData
+    })
+  .then(data => hotel = new Hotel(data))
+  .then(hotel => console.log(hotel))
+  .catch(err => console.log('fetch error'));
+
+
 $(document).ready(() => {
   domUpdates.pageLoadHandler();
-   // $('aside__bignum-number').text(hotel.findNumberRoomsAvailable())
+  
+  setTimeout(function() {
+    hotel.grandOpening();
+    $('#aside__date').text(hotel.date)
+    $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
+    $('#aside__bignum-percentage-span').text(hotel.percentageOccupied)
+  }, 3000);
+
 
   $('#header__button-orders').click(() => {
     domUpdates.orderButtonHandler();

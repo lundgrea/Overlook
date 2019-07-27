@@ -9,12 +9,12 @@ import Booking from '../src/Booking';
 import RoomService from '../src/RoomService';
 
 class Hotel {
-  constructor(date, customers, rooms, bookings, orders) {
-    this.date = date;
-    this.allCustomers = customers;
-    this.allRooms = rooms;
-    this.allBookings = bookings;
-    this.allRoomServiceOrders = orders;
+  constructor(data) {
+    this.allCustomers = data.users;
+    this.allBookings = data.bookings;
+    this.allRooms = data.rooms;
+    this.allRoomServiceOrders = data.roomService;
+    this.date = null;
     this.currentCustomer = {};
     this.todaysBookings = [];
     this.todaysAvailableRoomCount = null;
@@ -22,11 +22,18 @@ class Hotel {
   }
 
   grandOpening() {
+    this.getToday();
+    console.log('grandOpening date' , this.date)
+    this.findBookedRooms(this.date);
+    console.log('grandOpening bookings', this.todaysBookings)
+    this.findNumberRoomsAvailable();
+    console.log('grandOpening availabilties', this.todaysAvailableRoomCount)
+    this.calculatePercentageOccupancy()
+    console.log('grandOpening occupancy', this.percentageOccupied)
   }
 
-  
-  findCustomer(ID) {
-    this.currentCustomer = this.allCustomers.filter(customer => customer.id === ID)
+  getToday() {
+    this.date = new Date().toLocaleDateString();
   }
 
   findBookedRooms(theDate) {
@@ -39,6 +46,10 @@ class Hotel {
 
   calculatePercentageOccupancy() {
     this.percentageOccupied = (this.todaysBookings.length / this.allRooms.length) * 100
+  }
+
+  findCustomer(ID) {
+    this.currentCustomer = this.allCustomers.filter(customer => customer.id === ID)
   }
 
   calculateRevenueToday() {

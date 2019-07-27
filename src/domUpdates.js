@@ -1,13 +1,22 @@
 import $ from 'jquery';
+import Hotel from '../src/Hotel';
 
 let domUpdates = {
 
   pageLoadHandler() {
-    $('#aside__date').text(domUpdates.displayDate());
-    $('#main__section-orders').hide()
-    $('#main__section-rooms').hide()
-    $('#main__section-customers').hide()
+    $('.page').hide();
+    $('#main__section-rooms').hide();
+    $('#main__section-customers').hide();
+    $('#main__section-orders').hide();
+    $('.splash').delay(1500).fadeOut("slow");
+    $('.page').delay(2000).fadeIn("slow");
   },
+
+  displayRoomsAvailable(){
+    $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount)
+  },
+
+
 
   orderButtonHandler() {
     console.log('order click');
