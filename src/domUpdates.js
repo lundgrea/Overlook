@@ -16,8 +16,6 @@ let domUpdates = {
     $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount)
   },
 
-
-
   orderButtonHandler() {
     console.log('order click');
     $('#main__section-home').hide();
@@ -54,7 +52,6 @@ let domUpdates = {
     let today = new Date().toLocaleDateString();
     return today;
   },
-
   
 }
 

@@ -62,6 +62,12 @@ $(document).ready(() => {
     domUpdates.homeButtonHandler();
   });
 
+  $('#aside__button-search').click((e) => {
+    e.preventDefault();
+    let searchResult = $('#aside__input-search').val()
+    hotel.findCustomerByName(searchResult);
+  })
+
 })
 
 
