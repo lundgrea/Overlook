@@ -40,7 +40,8 @@ $(document).ready(() => {
     hotel.grandOpening();
     $('#aside__date').text(hotel.date)
     $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
-    $('#aside__bignum-percentage-span').text(hotel.percentageOccupied)
+    $('#aside__bignum-percentage-span').text(hotel.todaysPercentageOccupied)
+    $('#main__bignum-service-charges').text(hotel.todaysTotalOrderRevenue)
   }, 3000);
 
 

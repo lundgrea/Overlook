@@ -18,18 +18,16 @@ class Hotel {
     this.currentCustomer = {};
     this.todaysBookings = [];
     this.todaysAvailableRoomCount = null;
-    this.percentageOccupied = null;
+    this.todaysPercentageOccupied = null;
+    this.todaysTotalOrderRevenue = null;
   }
 
   grandOpening() {
     this.getToday();
-    console.log('grandOpening date' , this.date)
     this.findBookedRooms(this.date);
-    console.log('grandOpening bookings', this.todaysBookings)
     this.findNumberRoomsAvailable();
-    console.log('grandOpening availabilties', this.todaysAvailableRoomCount)
     this.calculatePercentageOccupancy()
-    console.log('grandOpening occupancy', this.percentageOccupied)
+    this.calculateOrdersToday(this.date);
   }
 
   getToday() {
@@ -52,13 +50,18 @@ class Hotel {
     this.currentCustomer = this.allCustomers.filter(customer => customer.id === ID)
   }
 
+  calculateOrdersToday(theDate) {
+    let todaysOrders = this.allRoomServiceOrders.filter(order => order.date === theDate)
+    let totalOrderPrices = todaysOrders.map(order => order.totalCost)
+    this.todaysTotalOrderRevenue = totalOrderPrices.reduce((total, item) => {
+      return total += item
+    }, 0).toFixed(2)
+  }
+
   calculateRevenueToday() {
     //display within home page
   }
 
-  calculateOrdersToday() {
-    //display within home page
-  }
 
   selectCustomer(name) {
   }

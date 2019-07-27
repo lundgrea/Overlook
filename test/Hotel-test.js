@@ -80,4 +80,9 @@ describe('Hotel', function() {
     expect(hotel.percentageOccupied).to.equal(40)
   });
 
+  it('should be able to tell you the total revenue from a given date', function() {
+    hotel.calculateOrdersToday('2019/10/18');
+    expect(hotel.todaysTotalOrderRevenue).to.equal('25.28')
+  });
+
 });
