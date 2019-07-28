@@ -63,7 +63,8 @@ let domUpdates = {
   },
 
   displayCustomerInfo(customer) {
-
+    console.log('inside the dom method')
+  $('.main__customer-selected-name').text(customer.name)
   },
 
   displayNoUserByNamePrompt(enteredName) {

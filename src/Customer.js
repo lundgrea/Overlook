@@ -9,8 +9,15 @@ class Customer {
     this.name = user.name;
   }
 
-  displayCustomerInformation() {
+  gatherBookingInformation(){
+
   }
+
+  gatherOrderInformation(){
+
+  }
+
+  
 
   updateBooking() {
   }

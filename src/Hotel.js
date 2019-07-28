@@ -57,7 +57,9 @@ class Hotel {
   findCustomerById(ID) {
     return this.allCustomers.filter(customer => {
        if (customer.id === ID) {
-        return this.currentCustomer = customer
+        this.currentCustomer = new Customer(customer);
+        domUpdates.displayCustomerInfo(this.currentCustomer)
+        return this.currentCustomer;
        } else {
         domUpdates.displayNoUserByIDPrompt(ID);
         return this.customer = {};
@@ -68,7 +70,10 @@ class Hotel {
   findCustomerByName(theName) {
     return this.allCustomers.filter(person => {
       if (person.name.toUpperCase() === theName.toUpperCase()) {
-        return this.currentCustomer = person;
+        this.currentCustomer = new Customer(person);
+        domUpdates.displayCustomerInfo(this.currentCustomer)
+        console.log(this.currentCustomer)
+        return this.currentCustomer;
       } else {
         domUpdates.displayNoUserByNamePrompt(theName);
         return this.customer = {};
@@ -122,6 +127,7 @@ class Hotel {
   }
 
   addNewCustomer(name) {
+
   }
 
   createNewBooking() {
