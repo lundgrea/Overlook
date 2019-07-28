@@ -44,6 +44,7 @@ $(document).ready(() => {
     $('#main__bignum-service-charges-span').text(hotel.todaysTotalOrderRevenue);
     $('#main__bignums-revenue-span').text(hotel.todaysTotalRevenue)
     $('#main__bignum-record-high').text(domUpdates.formatDate(hotel.bestDay));
+    $('#main__bignum-record-low').text(domUpdates.formatDate(hotel.worstDay))
   }, 3000);
 
 

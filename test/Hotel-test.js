@@ -77,6 +77,14 @@ describe('Hotel', function() {
     expect(hotel.todaysOrders).to.equal(null);
   });
 
+  it('should start with no information for the record best day', function() {
+    expect(hotel.bestDay).to.equal(null);
+  });
+
+  it('should start with no information for the record worse day', function() {
+    expect(hotel.worstDay).to.equal(null);
+  });
+
   it('should be able to find specific customers by their ID', function() {
     hotel.findCustomerById(7);
     expect(hotel.currentCustomer).to.eql([{"id": 7, "name": "Josianne Huels"}])
@@ -117,9 +125,14 @@ describe('Hotel', function() {
     expect(hotel.todaysTotalRevenue).to.equal('484.40')
   });
 
-  it('should tell you the hotels best days sales', function(){
+  it('should tell you the hotels best days of sales', function(){
     hotel.findBestDay()
     expect(hotel.bestDay).to.equal('2019/08/28')
+  });
+
+   it('should tell you the hotels worst days of sales', function(){
+    hotel.findWorstDay()
+    expect(hotel.worstDay).to.equal('2019/08/28')
   });
 
 });

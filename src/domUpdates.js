@@ -59,10 +59,9 @@ let domUpdates = {
     let month = dateArray[1];
     let year = dateArray[0];
     let reformattedDate = `${month}/${day}/${year}`
-    console.log(reformattedDate)
     return reformattedDate
   }
-  
+
 }
 
 export default domUpdates;
