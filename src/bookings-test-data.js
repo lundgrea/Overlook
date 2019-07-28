@@ -45,6 +45,16 @@ const testBookings = {
     date: "2019/10/19",
     roomNumber: 16
     },
+    {
+    userID: 92,
+    date: "2019/08/28",
+    roomNumber: 10
+    },
+    {
+    userID: 57,
+    date: "2019/08/28",
+    roomNumber: 5
+    },
   ]
 }
 

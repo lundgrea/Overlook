@@ -117,4 +117,9 @@ describe('Hotel', function() {
     expect(hotel.todaysTotalRevenue).to.equal('484.40')
   });
 
+  it('should tell you the hotels best days sales', function(){
+    hotel.findBestDay()
+    expect(hotel.bestDay).to.equal('2019/08/28')
+  });
+
 });

@@ -22,6 +22,7 @@ class Hotel {
     this.todaysOrders = null
     this.todaysTotalOrderRevenue = null;
     this.todaysTotalRevenue = null;
+    this.bestDay = null;
   }
 
   grandOpening() {
@@ -55,7 +56,6 @@ class Hotel {
 
   findCustomerByName(theName) {
     this.currentCustomer = this.allCustomers.find(person => person.name.toUpperCase() === theName.toUpperCase())
-    console.log(this.currentCustomer)
   }
 
   calculateOrdersToday(theDate) {
@@ -81,7 +81,22 @@ class Hotel {
     this.todaysTotalRevenue = this.todaysTotalRevenue.toFixed(2)
   }
 
-  selectCustomer(name) {
+  findBestDay() { 
+    let bestDayList = this.allBookings.reduce((total, booking) => {
+      if(!total[booking.date]) {
+        total[booking.date] = 1
+      } else {
+        total[booking.date] += 1
+      }
+      return total
+    }, {})
+    let keys = bestDayList
+    this.bestDay = Object.keys(bestDayList).reduce((a, b) => bestDayList[a] > bestDayList[b] ? a : b)
+    console.log(this.bestDay)
+  }
+
+  findWorstDay() {
+
   }
 
   addNewCustomer(name) {
