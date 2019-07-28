@@ -41,8 +41,9 @@ $(document).ready(() => {
     $('#aside__date').text(hotel.date);
     $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
     $('#aside__bignum-percentage-span').text(hotel.todaysPercentageOccupied);
-    $('#main__bignum-service-charges').text(hotel.todaysTotalOrderRevenue);
+    $('#main__bignum-service-charges-span').text(hotel.todaysTotalOrderRevenue);
     $('#main__bignums-revenue-span').text(hotel.todaysTotalRevenue)
+    $('#main__bignum-record-high').text(hotel.bestDay);
   }, 3000);
 
 

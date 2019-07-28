@@ -32,6 +32,7 @@ class Hotel {
     this.calculatePercentageOccupancy()
     this.calculateOrdersToday(this.date);
     this.calculateRevenueToday(this.date)
+    this.findBestDay()
   }
 
   getToday() {
