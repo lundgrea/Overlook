@@ -43,7 +43,7 @@ $(document).ready(() => {
     $('#aside__bignum-percentage-span').text(hotel.todaysPercentageOccupied);
     $('#main__bignum-service-charges-span').text(hotel.todaysTotalOrderRevenue);
     $('#main__bignums-revenue-span').text(hotel.todaysTotalRevenue)
-    $('#main__bignum-record-high').text(hotel.bestDay);
+    $('#main__bignum-record-high').text(domUpdates.formatDate(hotel.bestDay));
   }, 3000);
 
 

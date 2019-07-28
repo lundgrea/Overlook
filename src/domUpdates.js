@@ -52,6 +52,16 @@ let domUpdates = {
     let today = new Date().toLocaleDateString();
     return today;
   },
+
+  formatDate(date) {
+    let dateArray = date.split('/')
+    let day = dateArray[2];
+    let month = dateArray[1];
+    let year = dateArray[0];
+    let reformattedDate = `${month}/${day}/${year}`
+    console.log(reformattedDate)
+    return reformattedDate
+  }
   
 }
 

@@ -93,6 +93,7 @@ class Hotel {
     }, {})
     let keys = bestDayList
     this.bestDay = Object.keys(bestDayList).reduce((a, b) => bestDayList[a] > bestDayList[b] ? a : b)
+    // this.bestDay = this.bestDay.split("/").reverse().join("/");
     console.log(this.bestDay)
   }
 
