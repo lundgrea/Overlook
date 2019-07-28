@@ -34,6 +34,10 @@ h1 {
   font-weight: 700;
 }
 
+.emphasis {
+font-weight: 700;
+}
+
 ul, 
 li {
   display: inline-block;
@@ -95,14 +99,14 @@ aside{
 }
 
 input {
-    height: 40px;
-    width: 70%;
-    margin: 0px 0px 0px 0px;
+  height: 40px;
+  width: 70%;
+  margin: 0px 0px 0px 0px;
 }
 
 ::placeholder {
   font-size: 14px;
-    padding: 10px;}
+  padding: 10px;}
 
 main {
   grid-area: main;
@@ -132,4 +136,25 @@ h6 {
 .display-record {
   display: inline-block;
   margin: 35px 71px 0px 71px;
+}
+
+.main__input-container {
+  display: flex;  
+  justify-content: center;
+}
+
+.main__button {
+  filter: invert(.27);
+  background-color: lightgrey;
+  max-height: 40px;
+  padding: 5px;
+}
+
+.main__button-search {
+  min-width: 40px;
+}
+
+.main__input{
+  background-color: white;
+  font-size: 20px;
 }

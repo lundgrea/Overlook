@@ -8,8 +8,8 @@ let domUpdates = {
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
     $('#main__section-orders').hide();
-    $('.splash').delay(1500).fadeOut("slow");
-    $('.page').delay(2000).fadeIn("slow");
+    $('.splash').delay(2000).fadeOut("slow");
+    $('.page').delay(2500).fadeIn("slow");
   },
 
   displayRoomsAvailable(){
@@ -52,7 +52,16 @@ let domUpdates = {
     let today = new Date().toLocaleDateString();
     return today;
   },
-  
+
+  formatDate(date) {
+    let dateArray = date.split('/')
+    let day = dateArray[2];
+    let month = dateArray[1];
+    let year = dateArray[0];
+    let reformattedDate = `${month}/${day}/${year}`
+    return reformattedDate
+  }
+
 }
 
 export default domUpdates;

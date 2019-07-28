@@ -41,9 +41,12 @@ $(document).ready(() => {
     $('#aside__date').text(hotel.date);
     $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
     $('#aside__bignum-percentage-span').text(hotel.todaysPercentageOccupied);
-    $('#main__bignum-service-charges').text(hotel.todaysTotalOrderRevenue);
+    $('#main__bignum-service-charges-span').text(hotel.todaysTotalOrderRevenue);
     $('#main__bignums-revenue-span').text(hotel.todaysTotalRevenue)
-  }, 3000);
+    $('#main__bignum-record-high').text(domUpdates.formatDate(hotel.bestDay));
+    $('#main__bignum-record-low').text(domUpdates.formatDate(hotel.worstDay));
+  }, 2500);
+
 
 
   $('#header__button-orders').click(() => {
@@ -66,10 +69,13 @@ $(document).ready(() => {
     e.preventDefault();
     let searchResult = $('#aside__input-search').val()
     hotel.findCustomerByName(searchResult);
-  })
+  });
 
-})
-
+  $('#main__input-search-room').click(() => {
+    $( "#main__button-search-rooms" ).datepicker();
+  });
 
 
 console.log('This is the JavaScript entry file - your code begins here.');
+
+})
