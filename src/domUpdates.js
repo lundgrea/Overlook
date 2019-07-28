@@ -8,8 +8,8 @@ let domUpdates = {
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
     $('#main__section-orders').hide();
-    $('.splash').delay(1500).fadeOut("slow");
-    $('.page').delay(2000).fadeIn("slow");
+    $('.splash').delay(2000).fadeOut("slow");
+    $('.page').delay(2500).fadeIn("slow");
   },
 
   displayRoomsAvailable(){

@@ -45,7 +45,7 @@ $(document).ready(() => {
     $('#main__bignums-revenue-span').text(hotel.todaysTotalRevenue)
     $('#main__bignum-record-high').text(domUpdates.formatDate(hotel.bestDay));
     $('#main__bignum-record-low').text(domUpdates.formatDate(hotel.worstDay))
-  }, 3000);
+  }, 2500);
 
 
   $('#header__button-orders').click(() => {

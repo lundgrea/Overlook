@@ -103,7 +103,6 @@ class Hotel {
 
   findWorstDay() {
    let rentalsList = this.findRentalsByDay()
-   console.log(rentalsList)
     this.worstDay = Object.keys(rentalsList).reduce((a, b) => rentalsList[b] > rentalsList[a] ? a : b)
   }
 

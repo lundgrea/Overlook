@@ -132,7 +132,7 @@ describe('Hotel', function() {
 
    it('should tell you the hotels worst days of sales', function(){
     hotel.findWorstDay()
-    expect(hotel.worstDay).to.equal('2019/08/28')
+    expect(hotel.worstDay).to.equal('2019/09/05')
   });
 
 });
