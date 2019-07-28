@@ -7,6 +7,7 @@ import testBookings from '../src/bookings-test-data';
 import Customer from '../src/Customer';
 import Booking from '../src/Booking';
 import RoomService from '../src/RoomService';
+import domUpdates from '../src/domUpdates'
 
 class Hotel {
   constructor(data) {
@@ -54,11 +55,25 @@ class Hotel {
   }
 
   findCustomerById(ID) {
-    this.currentCustomer = this.allCustomers.filter(customer => customer.id === ID)
+    return this.allCustomers.filter(customer => {
+       if (customer.id === ID) {
+        return this.currentCustomer = customer
+       } else {
+        domUpdates.displayNoUserByIDPrompt(ID);
+        return this.customer = {};
+       }
+    })
   }
 
   findCustomerByName(theName) {
-    this.currentCustomer = this.allCustomers.find(person => person.name.toUpperCase() === theName.toUpperCase())
+    return this.allCustomers.filter(person => {
+      if (person.name.toUpperCase() === theName.toUpperCase()) {
+        return this.currentCustomer = person;
+      } else {
+        domUpdates.displayNoUserByNamePrompt(theName);
+        return this.customer = {};
+      }
+   })
   }
 
   calculateOrdersToday(theDate) {

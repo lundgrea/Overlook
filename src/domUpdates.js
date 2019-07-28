@@ -13,7 +13,7 @@ let domUpdates = {
   },
 
   displayRoomsAvailable(){
-    $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount)
+    $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
   },
 
   orderButtonHandler() {
@@ -58,9 +58,21 @@ let domUpdates = {
     let day = dateArray[2];
     let month = dateArray[1];
     let year = dateArray[0];
-    let reformattedDate = `${month}/${day}/${year}`
-    return reformattedDate
-  }
+    let reformattedDate = `${month}/${day}/${year}`;
+    return reformattedDate;
+  },
+
+  displayCustomerInfo(customer) {
+
+  },
+
+  displayNoUserByNamePrompt(enteredName) {
+    
+  },
+
+  displayNoUserByIDPrompt(enteredID) {
+
+  },
 
 }
 
