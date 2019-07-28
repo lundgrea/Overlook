@@ -9,10 +9,6 @@ import testRoomServices from '../src/roomServices-test-data';
 import testBookings from '../src/bookings-test-data';
 
 let hotel;
-// let users = testUsers.users;
-// let bookings = testBookings.bookings;
-// let rooms = testRooms.rooms;
-// let orders = testRoomServices.roomServices;
 
 let info = 
   {
