@@ -7,6 +7,7 @@ let domUpdates = {
     $('.page').hide();
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
+    $('.main__customer-selected').hide()
     $('#main__section-orders').hide();
     $('.splash').delay(2000).fadeOut("slow");
     $('.page').delay(2500).fadeIn("slow");
@@ -63,7 +64,8 @@ let domUpdates = {
   },
 
   displayCustomerInfo(customer) {
-    console.log('inside the dom method')
+  $('.main__customer-unselected').hide()
+  $('.main__customer-selected').show()
   $('.main__customer-selected-name').text(customer.name)
   },
 

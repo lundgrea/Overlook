@@ -4,20 +4,22 @@ import Hotel from '../src/Hotel'
 
 
 class Customer {
-  constructor(user) {
+  constructor(user, allBookings, allOrders) {
     this.id = user.id
     this.name = user.name;
+    this.masterBookings = allBookings;
+    this.masterOrders = allOrders;
+    this.bookings = [];
+    this.orders = [];
   }
 
-  gatherBookingInformation(){
-
+  gatherBookingInformation() {
+    this.bookings = this.masterBookings.filter(booking => this.id === booking.userID)
   }
 
-  gatherOrderInformation(){
-
+  gatherOrderInformation() {
+    this.orders = this.masterOrders.filter(order => this.id === order.userID)
   }
-
-  
 
   updateBooking() {
   }

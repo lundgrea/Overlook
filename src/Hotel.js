@@ -57,7 +57,7 @@ class Hotel {
   findCustomerById(ID) {
     return this.allCustomers.filter(customer => {
        if (customer.id === ID) {
-        this.currentCustomer = new Customer(customer);
+        this.currentCustomer = new Customer(customer, this.allBookings, this.allRoomServiceOrders);
         domUpdates.displayCustomerInfo(this.currentCustomer)
         return this.currentCustomer;
        } else {
@@ -70,7 +70,7 @@ class Hotel {
   findCustomerByName(theName) {
     return this.allCustomers.filter(person => {
       if (person.name.toUpperCase() === theName.toUpperCase()) {
-        this.currentCustomer = new Customer(person);
+        this.currentCustomer = new Customer(person, this.allBookings, this.allRoomServiceOrders);
         domUpdates.displayCustomerInfo(this.currentCustomer)
         console.log(this.currentCustomer)
         return this.currentCustomer;

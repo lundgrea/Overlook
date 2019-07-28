@@ -36,6 +36,18 @@ roomServices: [
     food: "Unbranded Wooden Sandwich",
     totalCost: 7.95
     },
+    {
+    userID: 1,
+    date: "2019/09/28",
+    food: "Refined Rubber Sandwich",
+    totalCost: 9.89
+    },
+    {
+    userID: 1,
+    date: "2019/09/28",
+    food: "Refined Rubber Sandwich",
+    totalCost: 9.89
+    },
     //i added this one, completely made up//
     {
     userID: 67,
