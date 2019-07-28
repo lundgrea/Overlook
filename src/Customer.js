@@ -40,7 +40,7 @@ class Customer {
 
   displayOrders() {
     if (this.orders.length === 0) {
-      domUpdates.displayNoOrderMessage(this.user)
+      domUpdates.displayNoOrderMessage(this.name)
       //   console.log(TEST THIS WITH NEW USER)    //
     } else {
       this.orders.map(order => domUpdates.displayCustomerOrders(order))

@@ -86,10 +86,11 @@ let domUpdates = {
   },
 
   displayNoOrderMessage(customerName) {
+     $('#main__customer-orders-selected-orders').append(
+      `<h5>No food service orders for ${customerName}</h5>`)
   },
 
   displayCustomerOrders(order) {
-    console.log('in the dom order method')
     let betterDate = domUpdates.formatDate(order.date);
     $('#main__customer-orders-selected-orders').append(
       `<article class="order-card">
