@@ -18,6 +18,7 @@ class Customer {
     this.gatherBookingInformation();
     this.gatherOrderInformation();
     this.displayBookings();
+    this.displayOrders();
 
   }
   gatherBookingInformation() {
@@ -29,7 +30,21 @@ class Customer {
   }
 
   displayBookings() {
-    this.bookings.map(booking => domUpdates.displayCustomerBookings(booking))
+    if(this.bookings.length === 0) {
+      domUpdates.displayNoBookingsMessage(this.name)
+      //   console.log(TEST THIS WITH NEW USER)    //
+    } else {
+      this.bookings.map(booking => domUpdates.displayCustomerBookings(booking))
+    }
+  }
+
+  displayOrders() {
+    if (this.orders.length === 0) {
+      domUpdates.displayNoOrderMessage(this.user)
+      //   console.log(TEST THIS WITH NEW USER)    //
+    } else {
+      this.orders.map(order => domUpdates.displayCustomerOrders(order))
+    }
   }
 
   updateBooking() {

@@ -64,10 +64,15 @@ let domUpdates = {
     return reformattedDate;
   },
 
-  displayCustomerInfo(customer, ) {
+  displayCustomerInfo(customer) {
     $('.main__customer-unselected').hide()
     $('.main__customer-selected').show()
     $('.main__customer-selected-name').text(customer.name);
+  },
+
+  displayNoBookingsMessage(customerName) {
+    $('#main__customer-rooms-selected-booking').append(
+      `<h5>No current or past bookings for ${customerName}</h5>`)
   },
 
   displayCustomerBookings(booking) {
@@ -77,6 +82,21 @@ let domUpdates = {
       <h4 class="main__customer-rooms-selected-booking-info main__customer-rooms-selected-booking-date">Booking Date: ${betterDate}</h4>
       <h4 class="main__customer-rooms-selected-booking-info main__customer-rooms-selected-booking-room">Room Number: ${booking.roomNumber}</h4>
       </article>`
+      )
+  },
+
+  displayNoOrderMessage(customerName) {
+  },
+
+  displayCustomerOrders(order) {
+    console.log('in the dom order method')
+    let betterDate = domUpdates.formatDate(order.date);
+    $('#main__customer-orders-selected-orders').append(
+      `<article class="order-card">
+          <h4 class="main__customer-orders-selected-order-info main__customer-orders-selected-order-date">Order Date: ${betterDate}</h4>
+          <h4 class="main__customer-orders-selected-order-info main__customer-orders-selected-order-item">Item Ordered: ${order.food}</h4>
+          <h4 class="main__customer-orders-selected-order-info main__customer-orders-selected-order-total">Order Total: $${order.totalCost}</h4>
+        </article>`
       )
   },
 
