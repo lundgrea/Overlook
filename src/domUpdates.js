@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import Hotel from '../src/Hotel';
+import Customer from '../src/Customer'
 
 let domUpdates = {
 
@@ -63,18 +64,26 @@ let domUpdates = {
     return reformattedDate;
   },
 
-  displayCustomerInfo(customer) {
-  $('.main__customer-unselected').hide()
-  $('.main__customer-selected').show()
-  $('.main__customer-selected-name').text(customer.name)
+  displayCustomerInfo(customer, ) {
+    $('.main__customer-unselected').hide()
+    $('.main__customer-selected').show()
+    $('.main__customer-selected-name').text(customer.name);
+  },
+
+  displayCustomerBookings(booking) {
+    let betterDate = domUpdates.formatDate(booking.date)
+    $('#main__customer-rooms-selected-booking').append(
+      `<article class="booking-card">
+      <h4 class="main__customer-rooms-selected-booking-info main__customer-rooms-selected-booking-date">Booking Date: ${betterDate}</h4>
+      <h4 class="main__customer-rooms-selected-booking-info main__customer-rooms-selected-booking-room">Room Number: ${booking.roomNumber}</h4>
+      </article>`
+      )
   },
 
   displayNoUserByNamePrompt(enteredName) {
-    
   },
 
   displayNoUserByIDPrompt(enteredID) {
-
   },
 
 }

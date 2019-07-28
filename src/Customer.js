@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import testUsers from '../src/users-test-data';
+import domUpdates from '../src/domUpdates'
 import Hotel from '../src/Hotel'
 
 
@@ -13,12 +14,22 @@ class Customer {
     this.orders = [];
   }
 
+  customerHandler() {
+    this.gatherBookingInformation();
+    this.gatherOrderInformation();
+    this.displayBookings();
+
+  }
   gatherBookingInformation() {
-    this.bookings = this.masterBookings.filter(booking => this.id === booking.userID)
+    this.bookings = this.masterBookings.filter(booking => this.id === booking.userID);
   }
 
   gatherOrderInformation() {
     this.orders = this.masterOrders.filter(order => this.id === order.userID)
+  }
+
+  displayBookings() {
+    this.bookings.map(booking => domUpdates.displayCustomerBookings(booking))
   }
 
   updateBooking() {

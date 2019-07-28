@@ -59,6 +59,7 @@ class Hotel {
        if (customer.id === ID) {
         this.currentCustomer = new Customer(customer, this.allBookings, this.allRoomServiceOrders);
         domUpdates.displayCustomerInfo(this.currentCustomer)
+        this.currentCustomer.customerHandler()
         return this.currentCustomer;
        } else {
         domUpdates.displayNoUserByIDPrompt(ID);
@@ -71,8 +72,8 @@ class Hotel {
     return this.allCustomers.filter(person => {
       if (person.name.toUpperCase() === theName.toUpperCase()) {
         this.currentCustomer = new Customer(person, this.allBookings, this.allRoomServiceOrders);
-        domUpdates.displayCustomerInfo(this.currentCustomer)
-        console.log(this.currentCustomer)
+        domUpdates.displayCustomerInfo(this.currentCustomer);
+        this.currentCustomer.customerHandler()
         return this.currentCustomer;
       } else {
         domUpdates.displayNoUserByNamePrompt(theName);
