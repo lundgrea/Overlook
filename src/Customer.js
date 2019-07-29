@@ -12,15 +12,23 @@ class Customer {
     this.masterOrders = allOrders;
     this.bookings = [];
     this.orders = [];
+    this.date = null;
+    this.todaysBooking = {};
   }
 
   customerHandler() {
+    this.getToday()
     this.gatherBookingInformation();
     this.gatherOrderInformation();
     this.displayBookings();
     this.displayOrders();
-
+    this.checkBookingsForToday(this.date)
   }
+
+  getToday() {
+    this.date = new Date().toLocaleDateString();
+  }
+
   gatherBookingInformation() {
     this.bookings = this.masterBookings.filter(booking => this.id === booking.userID);
   }
@@ -45,6 +53,15 @@ class Customer {
     } else {
       this.orders.map(order => domUpdates.displayCustomerOrders(order))
     }
+  }
+
+  checkBookingsForToday(today) {
+    this.todaysBooking = this.bookings.find(booking => booking.date === today)
+    if (this.todaysBookings === undefined) {
+      console.log('no bookings for today')
+      domUpdates.displayPromptToBookTonight(this.name)
+    }
+    return this.todaysBookings
   }
 
   updateBooking() {

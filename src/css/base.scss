@@ -112,6 +112,9 @@ main {
   grid-area: main;
   background-color: blanchedalmond;
   color: #37384E;
+  height: 100%;
+  position: relative;
+  overflow:auto; 
 }
 
 .main__section {
@@ -178,4 +181,17 @@ h6 {
 
 .main__customer-rooms-selected-booking-info {
   margin: 5px 0px 5px 0px
+}
+
+footer {
+  background-color: #849974;
+  width:100%;
+  height: 125px;
+  position:absolute;
+  bottom:0;
+}
+
+.footer__prompt-main-message {
+  margin: 0px 0px 0px 0px;
+  font-size: 20px
 }

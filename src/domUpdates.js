@@ -8,8 +8,9 @@ let domUpdates = {
     $('.page').hide();
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
-    $('.main__customer-selected').hide()
+    $('.main__customer-selected').hide();
     $('#main__section-orders').hide();
+    $('.footer__prompt').hide()
     $('.splash').delay(2000).fadeOut("slow");
     $('.page').delay(2500).fadeIn("slow");
   },
@@ -99,6 +100,14 @@ let domUpdates = {
           <h4 class="main__customer-orders-selected-order-info main__customer-orders-selected-order-total">Order Total: $${order.totalCost}</h4>
         </article>`
       )
+  },
+
+  displayPromptToBookTonight(customerName) {
+    $('.footer__prompt').show();
+    $('.footer__prompt').append(`
+      <h6 class="footer__prompt-main-message" id="footer__prompt-book-tonight">${customerName} does not have a room booked yet for tonight.</h6>
+      <h5>book now</h5>
+      <button>book now</button>`)
   },
 
   displayNoUserByNamePrompt(enteredName) {

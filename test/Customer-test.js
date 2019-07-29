@@ -37,6 +37,10 @@ describe('Customer', function() {
     expect(customer1.bookings).to.eql([])
   });
 
+   it('should start with no bookings for today', function() {
+    expect(customer1.todaysBooking).to.eql({})
+  });
+
   it('should start with no orders', function() {
     expect(customer1.orders).to.eql([])
   });
@@ -80,6 +84,13 @@ describe('Customer', function() {
     }
     ])
   });
+
+   it('should check for bookings for today', function(){
+    customer1.gatherBookingInformation()
+    customer1.checkBookingsForToday("2019/07/27")
+    expect(customer1.todaysBooking).to.eql({ userID: 1, date: '2019/07/27', roomNumber: 28 })
+
+   });
 
 
 });
