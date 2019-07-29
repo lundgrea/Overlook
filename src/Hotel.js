@@ -138,12 +138,14 @@ class Hotel {
 
   unformatDate() {
     let dateArray = this.date.split('/')
-    console.log(dateArray)
     let day = dateArray[1];
     let month = dateArray[0];
     let year = dateArray[2];
-    let unformattedDate = `${year}/0${month}/${day}`;
-    console.log(unformattedDate)
+    if (month <= 9) {
+      var unformattedDate = `${year}/0${month}/${day}`;
+    } else {
+      var unformattedDate = `${year}/${month}/${day}`
+    }
     this.unformattedDate = unformattedDate;
   }
 
