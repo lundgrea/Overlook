@@ -10,6 +10,7 @@ let domUpdates = {
     $('#main__section-customers').hide();
     $('.main__customer-selected').hide();
     $('#main__section-orders').hide();
+    // $('.main__section-orders-headline').hide()
     $('.footer__prompt').hide()
     $('.splash').delay(2000).fadeOut("slow");
     $('.page').delay(2500).fadeIn("slow");
@@ -122,6 +123,14 @@ let domUpdates = {
      $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredID} within the database. Please search by another ID.`)
   },
 
+  displayOrdersToday(order) {
+    console.log('inside order method')
+    $('.main__section-orders').append(
+      `<article class="order-card">
+          <h4 class="main__orders-general-info" id="main__orders-general-info-item">Item: ${order.food}</h4>
+          <h4 class="main__orders-general-info"  id="main__orders-general-info-total">Total: $${order.totalCost}</h4>
+        </article>`)
+  }, 
 }
 
 export default domUpdates;

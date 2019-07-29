@@ -38,6 +38,7 @@ class Hotel {
     this.calculateRevenueToday(this.unformattedDate)
     this.findBestDay();
     this.findWorstDay();
+    this.populateTodaysOrders();
   }
 
   getToday() {
@@ -147,6 +148,15 @@ class Hotel {
       var unformattedDate = `${year}/${month}/${day}`
     }
     this.unformattedDate = unformattedDate;
+  }
+
+  populateTodaysOrders() {
+    if (this.todaysOrders.length === 0) {
+      //   add error handling    //
+    } else {
+      console.log(this.todaysOrders)
+      this.todaysOrders.map(order => domUpdates.displayOrdersToday(order))
+    }
   }
 
   createNewBooking() {
