@@ -106,8 +106,7 @@ let domUpdates = {
     $('.footer__prompt').show();
     $('.footer__prompt').append(`
       <h6 class="footer__prompt-main-message" id="footer__prompt-book-tonight">${customerName} does not have a room booked yet for tonight.</h6>
-      <h5>book now</h5>
-      <button>book now</button>`)
+      <h5 class="footer__prompt-clickable">book now</h5>`)
   },
 
   displayNoUserByNamePrompt(enteredName) {
