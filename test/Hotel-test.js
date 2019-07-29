@@ -144,7 +144,6 @@ it('should be able to let you know if a customer does not exist', function(){
    it('should be able to generate a new user', function() {
     hotel.generateNewCustomer('Alyssa Lundgren');
     expect(hotel.currentCustomer.name).to.equal('Alyssa Lundgren')
-    expect(hotel.currentCustomer.id).to.equal(101)
    });
 
 });
