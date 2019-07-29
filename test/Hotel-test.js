@@ -141,4 +141,10 @@ it('should be able to let you know if a customer does not exist', function(){
     expect(hotel.worstDay).to.equal('2019/09/05')
   });
 
+   it('should be able to generate a new user', function() {
+    hotel.generateNewCustomer('Alyssa Lundgren');
+    expect(hotel.currentCustomer.name).to.equal('Alyssa Lundgren')
+    expect(hotel.currentCustomer.id).to.equal(101)
+   });
+
 });

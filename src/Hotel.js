@@ -127,8 +127,10 @@ class Hotel {
     this.worstDay = Object.keys(rentalsList).reduce((a, b) => rentalsList[b] > rentalsList[a] ? a : b)
   }
 
-  addNewCustomer(name) {
-
+  generateNewCustomer(nameInput) {
+    this.currentCustomer = new Customer({id: 101, name: nameInput}, this.allBookings, this.allRoomServiceOrders)
+    domUpdates.displayCustomerInfo(this.currentCustomer);
+    console.log(this.currentCustomer)
   }
 
   createNewBooking() {
