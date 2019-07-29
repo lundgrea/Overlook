@@ -16,6 +16,7 @@ class Hotel {
     this.allRooms = data.rooms;
     this.allRoomServiceOrders = data.roomService;
     this.date = null;
+    this.unformattedDate = null;
     this.currentCustomer = {};
     this.todaysBookings = [];
     this.todaysAvailableRoomCount = null;
@@ -29,11 +30,12 @@ class Hotel {
 
   grandOpening() {
     this.getToday();
-    this.findBookedRooms(this.date);
+    this.unformatDate();
+    this.findBookedRooms(this.unformattedDate);
     this.findNumberRoomsAvailable();
     this.calculatePercentageOccupancy()
-    this.calculateOrdersToday(this.date);
-    this.calculateRevenueToday(this.date)
+    this.calculateOrdersToday(this.unformattedDate);
+    this.calculateRevenueToday(this.unformattedDate)
     this.findBestDay();
     this.findWorstDay();
   }
@@ -132,6 +134,17 @@ class Hotel {
     this.currentCustomer = new Customer({id: randomNumber, name: nameInput}, this.allBookings, this.allRoomServiceOrders)
     domUpdates.displayCustomerInfo(this.currentCustomer);
     console.log(this.currentCustomer)
+  }
+
+  unformatDate() {
+    let dateArray = this.date.split('/')
+    console.log(dateArray)
+    let day = dateArray[1];
+    let month = dateArray[0];
+    let year = dateArray[2];
+    let unformattedDate = `${year}/0${month}/${day}`;
+    console.log(unformattedDate)
+    this.unformattedDate = unformattedDate;
   }
 
   createNewBooking() {
