@@ -74,6 +74,12 @@ $(document).ready(() => {
     $( "#main__button-search-rooms" ).datepicker();
   });
 
+  $('#aside__button-add').click((e) => {
+    e.preventDefault();
+    let newUserName = $('#aside__input-add').val()
+    hotel.generateNewCustomer(newUserName)
+  })
+
 
 console.log('This is the JavaScript entry file - your code begins here.');
 
