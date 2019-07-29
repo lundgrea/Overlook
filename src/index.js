@@ -68,6 +68,7 @@ $(document).ready(() => {
     e.preventDefault();
     let searchResult = $('#aside__input-search').val()
     hotel.findCustomerByName(searchResult);
+    domUpdates.resetField()
   });
 
   $('#main__input-search-room').click(() => {
@@ -78,6 +79,7 @@ $(document).ready(() => {
     e.preventDefault();
     let newUserName = $('#aside__input-add').val()
     hotel.generateNewCustomer(newUserName)
+    domUpdates.resetField()
   })
 
 

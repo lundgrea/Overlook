@@ -110,9 +110,16 @@ let domUpdates = {
   },
 
   displayNoUserByNamePrompt(enteredName) {
+    $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredName} within the database. Please search by another name.`)
+  },
+
+  resetField() {
+    console.log('in the reset method')
+    $('.aside__input').val('');
   },
 
   displayNoUserByIDPrompt(enteredID) {
+     $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredID} within the database. Please search by another ID.`)
   },
 
 }
