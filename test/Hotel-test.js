@@ -34,7 +34,7 @@ describe('Hotel', function() {
 
   it('should be able to figure out the date', function(){
     hotel.getToday();
-    expect(hotel.date).to.equal('7/27/2019')
+    expect(hotel.date).to.equal('7/28/2019')
   });
 
   it('should manage all hotel guests', function() {
@@ -83,12 +83,22 @@ describe('Hotel', function() {
 
   it('should be able to find specific customers by their ID', function() {
     hotel.findCustomerById(7);
-    expect(hotel.currentCustomer).to.eql([{"id": 7, "name": "Josianne Huels"}])
+    expect(hotel.currentCustomer).to.eql({"id": 7, "name": "Josianne Huels"})
+  });
+
+it('should be able to let you know if a customer does not exist', function(){
+    hotel.findCustomerById(55);
+    expect(hotel.currentCustomer).to.eql({})
   });
 
   it('should be able to find specific customers by their name', function() {
     hotel.findCustomerByName('Josianne Huels');
-    expect(hotel.currentCustomer).to.eql({"id": 7, "name": "Josianne Huels"})
+    expect(hotel.currentCustomer).to.eql({"id": 7, "name": "Josianne Huels"});
+  });
+
+  it('should be able to let you know if a customer does not exist', function(){
+    hotel.findCustomerByName('Alyssa');
+    expect(hotel.currentCustomer).to.eql({})
   });
 
   it('should be able to find available rooms', function(){

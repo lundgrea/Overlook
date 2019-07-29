@@ -48,7 +48,6 @@ $(document).ready(() => {
   }, 2500);
 
 
-
   $('#header__button-orders').click(() => {
     domUpdates.orderButtonHandler();
   });

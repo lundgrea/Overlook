@@ -112,6 +112,9 @@ main {
   grid-area: main;
   background-color: blanchedalmond;
   color: #37384E;
+  height: 100%;
+  position: relative;
+  overflow:auto; 
 }
 
 .main__section {
@@ -129,7 +132,7 @@ h5 {
 }
 
 h6 {
-  margin: 0px 0px 150px 0px;
+  margin: 0px 0px 100px 0px;
 }
 
 .display-revenue, 
@@ -157,4 +160,47 @@ h6 {
 .main__input{
   background-color: white;
   font-size: 20px;
+}
+
+.main__customer-selected {
+  border: 2px solid black;
+  max-width: 75%;
+}
+
+.main__customer-rooms-selected-booking {
+  border: 2px solid black;
+  min-width: 70%;
+  display: inline-block;
+}
+
+.order-card,
+.booking-card {
+  border: 1px solid grey; 
+  margin: 5px 5px 5px 5px;
+}
+
+.main__customer-rooms-selected-booking-info {
+  margin: 5px 0px 5px 0px
+}
+
+footer {
+  background-color: #849974;
+  width:100%;
+  height: 100px;
+  position:absolute;
+  bottom:0;
+}
+
+.footer__prompt-main-message {
+  margin: 13px 0px 0px 0px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.footer__prompt-clickable{
+  margin: 5px 5px 5px 5px;
+}
+
+.footer__prompt-clickable:hover {
+  color: lightgrey;
 }
