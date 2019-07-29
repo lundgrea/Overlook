@@ -30,7 +30,7 @@ class Hotel {
 
   grandOpening() {
     this.getToday();
-    this.unformatDate();
+    this.unformatDate(this.date);
     this.findBookedRooms(this.unformattedDate);
     this.findNumberRoomsAvailable();
     this.calculatePercentageOccupancy()
@@ -136,8 +136,8 @@ class Hotel {
     console.log(this.currentCustomer)
   }
 
-  unformatDate() {
-    let dateArray = this.date.split('/')
+  unformatDate(date) {
+    let dateArray = date.split('/')
     let day = dateArray[1];
     let month = dateArray[0];
     let year = dateArray[2];

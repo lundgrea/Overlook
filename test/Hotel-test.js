@@ -34,7 +34,7 @@ describe('Hotel', function() {
 
   it('should be able to figure out the date', function(){
     hotel.getToday();
-    expect(hotel.date).to.equal('7/28/2019')
+    expect(hotel.date).to.equal('7/29/2019')
   });
 
   it('should manage all hotel guests', function() {
@@ -53,8 +53,13 @@ describe('Hotel', function() {
     expect(hotel.allBookings).to.be.a('array');
   });
 
-   it('should start with no information for rooms available', function() {
+  it('should start with no information for rooms available', function() {
     expect(hotel.todaysAvailableRoomCount).to.equal(null);
+  });
+
+  it('should start with no date, in either formats', function() {
+    expect(hotel.date).to.equal(null);
+    expect(hotel.unformattedDate).to.equal(null)
   });
 
   it('should start with no information for percentage occupancy', function() {
@@ -81,12 +86,17 @@ describe('Hotel', function() {
     expect(hotel.worstDay).to.equal(null);
   });
 
+   it('should be able to reformat the date', function() {
+    hotel.unformatDate('8/28/2019')
+    expect(hotel.unformattedDate).to.equal('2019/08/28');
+  });
+
   it('should be able to find specific customers by their ID', function() {
     hotel.findCustomerById(7);
     expect(hotel.currentCustomer).to.eql({"id": 7, "name": "Josianne Huels"})
   });
 
-it('should be able to let you know if a customer does not exist', function(){
+  it('should be able to let you know if a customer does not exist', function(){
     hotel.findCustomerById(55);
     expect(hotel.currentCustomer).to.eql({})
   });
