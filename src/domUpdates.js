@@ -119,6 +119,7 @@ let domUpdates = {
   },
 
   displayNoUserByIDPrompt(enteredID) {
+     $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredID} within the database. Please search by another ID.`)
   },
 
 }
