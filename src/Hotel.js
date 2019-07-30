@@ -167,7 +167,7 @@ class Hotel {
     if(daysOrders.length === 0) {
       domUpdates.displayNoOrdersForSelectedDate(date)
     } else {      
-      daysOrders.forEach(order => domUpdates.displayDateSearchedOrders(order))
+      domUpdates.displayDateSearchedOrders(daysOrders);
     }
   }
 

@@ -166,17 +166,18 @@ let domUpdates = {
         <h4>No Room Service Orders for ${betterDate}</h4>`)
   },
 
-  displayDateSearchedOrders(order) {
-    let betterDate = domUpdates.formatDate(order.date);
+  displayDateSearchedOrders(orders) {
     $('.main__orders-search-results').text('')
     $('#main__input-search-orders').val('')
-    $('.main__orders-search-results').append(
+    $('.main__orders-search-results').append(`<h5 class="main__orders-search-headline">Search Results</h5>`)
+    orders.map(order =>{
+    $('.main__orders-search-headline').after(
       `<article class="order-card">
-          <h5>Search Results</h5>
-          <h4 class="main__order-searched-order-info">Order Date: ${betterDate}</h4>
+          <h4 class="main__order-searched-order-info">Order Date: ${order.date}</h4>
           <h4 class="main__order-searched-order-info">Item Ordered: ${order.food}</h4>
           <h4 class="main__order-searched-order-info">Order Total: $${order.totalCost}</h4>
         </article>`)
+    })
   },
 
   displayNoBookingsForSelectedDate(date) {
@@ -187,16 +188,18 @@ let domUpdates = {
         <h4>No Bookings for ${betterDate}</h4>`)
   },
 
-  displayDateSearchedBookings(booking) {
-    let betterDate = domUpdates.formatDate(booking.date);
+  displayDateSearchedBookings(bookings) {
     $('.main__rooms-search-results').text('')
     $('#main__input-search-room').val('');
-    $('.main__rooms-search-results').append(`
-      <h5>Search Results</h5>
+    $('.main__rooms-search-result').append(`
+    <h5 class="main__rooms-search-headline">Search Results</h5>`)
+    bookings.map(booking =>
+    $('.main__rooms-search-headline').after(`
       <article class="booking-card">
-        <h4 class="main__rooms-searched-booking-info">Booking Date: ${betterDate}</h4>
+        <h4 class="main__rooms-searched-booking-info">Booking Date: ${booking.date}</h4>
         <h4 class="main__rooms-searched-booking-info">Room Number: ${booking.roomNumber}</h4>
       </article>`)
+    )
   },
 
   displayRoomsAvailable(rooms) {
