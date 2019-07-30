@@ -89,7 +89,7 @@ $(document).ready(() => {
     e.preventDefault;
     let searchResult = $('#main__input-search-room').val();
     console.log(searchResult);
-    hotel.searchBookingsByDate(searchResult);
+    hotel.findRoomsNotBookedByDate(searchResult);
   })
 
 
