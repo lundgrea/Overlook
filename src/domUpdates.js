@@ -145,7 +145,10 @@ let domUpdates = {
     $('$main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`)
   }, 
 
-  
+  displayDateSearchedOrders(orders) {
+    
+  }
+
 
 
 }

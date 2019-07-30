@@ -26,6 +26,7 @@ class Hotel {
     this.todaysTotalRevenue = null;
     this.bestDay = null;
     this.worstDay = null;
+    this.searchDate = null;
   }
 
   grandOpening() {
@@ -161,7 +162,8 @@ class Hotel {
   }
 
   searchRoomServiceOrdersByDate(date) {
-    
+    let todaysOrders = this.allRoomServiceOrders.filter(order => order.date === date)
+    domUpdates.displayDateSearchedOrders(todaysOrders)
   }
 
   resetCustomer() {
