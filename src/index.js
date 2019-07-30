@@ -95,8 +95,24 @@ $(document).ready(() => {
     let searchResult = $('#main__input-search-room').val();
     console.log(searchResult);
     hotel.displayDatedRoomAvailability(searchResult);
+  });
+
+  $('#residential-suite').click((e) => {
+    e.preventDefault;
+    hotel.filterAvailableRoomByType("residential suite") 
   })
 
+  $('#suite').click((e) => { 
+    e.preventDefault;
+
+  })
+
+  $('#junior-suite').click((e) => { 
+    e.preventDefault;
+  });
+  $('#single-room').click((e) => { 
+    e.preventDefault;
+  })
 
 console.log('This is the JavaScript entry file - your code begins here.');
 

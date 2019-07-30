@@ -203,6 +203,8 @@ let domUpdates = {
 
   displayRoomsAvailable(rooms) {
     $('.main__rooms-search-results').text('')
+    $('.main__rooms-tonight-search-results').text('')
+    $('.main__rooms-chart').text('')
     $('#main__input-search-room').val('');
     $('.main__rooms-search-results').append(`
       <h5 class="main__rooms-search-headline">Search Results</h5>`)
@@ -222,7 +224,9 @@ let domUpdates = {
   },
 
   displayTodaysAvailableRooms(rooms) {
-    console.log(rooms)
+    $('.main__rooms-tonight-search-result').text('')
+    $('.main__rooms-chart').text('')
+    $('.main__rooms-search-results').text('')
     $('.main__rooms-tonight-search-results').append(`
       <h5 class="main__rooms-search-headline">Rooms Available Today</h5>`)
     rooms.map(room => {
