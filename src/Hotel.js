@@ -160,6 +160,10 @@ class Hotel {
     }
   }
 
+  searchRoomServiceOrdersByDate(date) {
+    
+  }
+
   resetCustomer() {
     this.currentCustomer = {}  
   }
@@ -169,12 +173,7 @@ class Hotel {
 
   createNewRoomServiceOrder() {
   }
-
-  displayTodayRoomServiceOrders(date) {
-  }
-
-  searchRoomServiceOrdersByDate(date) {
-  }
+ 
 
 
 

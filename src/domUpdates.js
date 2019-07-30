@@ -114,7 +114,6 @@ let domUpdates = {
   },
 
   resetField() {
-    console.log('in the reset method')
     $('.aside__input').val('');
   },
 
@@ -123,7 +122,6 @@ let domUpdates = {
   },
 
   displayOrdersToday(order) {
-    console.log('inside order method')
     $('.main__section-orders').append(
       `<article class="order-card">
           <h4 class="main__orders-general-info" id="main__orders-general-info-item">Item: ${order.food}</h4>
@@ -146,6 +144,8 @@ let domUpdates = {
    displayNoOrderCostForCustomer(name) {
     $('$main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`)
   }, 
+
+  
 
 
 }
