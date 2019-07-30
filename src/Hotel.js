@@ -167,7 +167,7 @@ class Hotel {
     if(daysOrders.length === 0) {
       domUpdates.displayNoOrdersForSelectedDate(date)
     } else {      
-      daysOrders.forEach(order => domUpdates.displayDateSearchedOrders(order))
+      domUpdates.displayDateSearchedOrders(daysOrders);
     }
   }
 
@@ -182,6 +182,22 @@ class Hotel {
   resetCustomer() {
     this.currentCustomer = {}  
   }
+
+  findRoomsNotBookedByDate(date) {
+    let daysBookings = this.allBookings.filter(booking => booking.date === date)
+    let daysBookedRooms = daysBookings.map(booking => booking.roomNumber)
+    let allRoomNumbers = this.allRooms.map(room => room.number)
+    let availableRoomNumbers = allRoomNumbers.filter(room => {
+      return daysBookedRooms.indexOf(room) < 0
+      }) 
+    let availableRoomsNested = availableRoomNumbers.map(number => {
+      return this.allRooms.filter(room => room.number === number)
+    })
+    let availableRooms = availableRoomsNested.flat()
+    console.log(availableRooms)
+    domUpdates.displayRoomsAvailable(availableRooms)
+  }
+
 
   createNewBooking() {
   }

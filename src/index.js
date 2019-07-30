@@ -64,6 +64,10 @@ $(document).ready(() => {
     domUpdates.homeButtonHandler();
   });
 
+  $('#footer__button-book-now').click(() => {
+    domUpdates.bookNowButtonHandler();
+  })
+
   $('#aside__button-search').click((e) => {
     e.preventDefault();
     let searchResult = $('#aside__input-search').val()
@@ -89,7 +93,7 @@ $(document).ready(() => {
     e.preventDefault;
     let searchResult = $('#main__input-search-room').val();
     console.log(searchResult);
-    hotel.searchBookingsByDate(searchResult);
+    hotel.findRoomsNotBookedByDate(searchResult);
   })
 
 
