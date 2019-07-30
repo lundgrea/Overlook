@@ -185,17 +185,16 @@ class Hotel {
 
   findRoomsNotBookedByDate(date) {
     let daysBookings = this.allBookings.filter(booking => booking.date === date)
-    console.log('daysBookings: ' , daysBookings)
     let daysBookedRooms = daysBookings.map(booking => booking.roomNumber)
-        console.log('daysBookedRooms: ' , daysBookedRooms)
     let allRoomNumbers = this.allRooms.map(room => room.number)
-        console.log('allRoomNumbers: ' , allRoomNumbers)
-    let availableRooms = allRoomNumbers.filter(room => {
+    let availableRoomNumbers = allRoomNumbers.filter(room => {
       return daysBookedRooms.indexOf(room) < 0
       }) 
-    return availableRooms
+    let availableRoomsNested = availableRoomNumbers.map(number => {
+      return this.allRooms.filter(room => room.number === number)
+    })
+    let availableRooms = availableRoomsNested.flat()
   }
-
 
   createNewBooking() {
   }
