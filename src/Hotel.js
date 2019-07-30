@@ -162,8 +162,15 @@ class Hotel {
   }
 
   searchRoomServiceOrdersByDate(date) {
-    let todaysOrders = this.allRoomServiceOrders.filter(order => order.date === date)
-    domUpdates.displayDateSearchedOrders(todaysOrders)
+    let daysOrders = this.allRoomServiceOrders.filter(order => order.date === date)
+    console.log(daysOrders)
+    if(daysOrders.length === 0) {
+      domUpdates.displayNoOrdersForSelectedDate(date)
+    } else {      
+      daysOrders.forEach(order => {
+        domUpdates.displayDateSearchedOrders(order)
+      })
+    }
   }
 
   resetCustomer() {

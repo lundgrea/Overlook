@@ -145,8 +145,26 @@ let domUpdates = {
     $('$main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`)
   }, 
 
-  displayDateSearchedOrders(orders) {
-    
+  displayNoOrdersForSelectedDate(date) {
+    let betterDate = domUpdates.formatDate(date);
+    $('.main__orders-search-results').text('')
+    $('#main__input-search-orders').val('')
+    $('.main__orders-search-results').append(`
+        <h5>Search Results</h5>
+        <h4>No Room Service Orders for ${betterDate}</h4>`)
+  },
+
+  displayDateSearchedOrders(order) {
+    $('.main__orders-search-results').text('')
+    $('#main__input-search-orders').val('')
+    let betterDate = domUpdates.formatDate(order.date);
+    $('.main__orders-search-results').append(
+      `<article class="order-card">
+          <h5>Search Results</h5>
+          <h4 class="main__order-searched-order-info">Order Date: ${betterDate}</h4>
+          <h4 class="main__order-searched-order-info">Item Ordered: ${order.food}</h4>
+          <h4 class="main__order-searched-order-info">Order Total: $${order.totalCost}</h4>
+        </article>`)
   }
 
 
