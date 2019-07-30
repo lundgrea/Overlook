@@ -155,9 +155,9 @@ let domUpdates = {
   },
 
   displayDateSearchedOrders(order) {
+    let betterDate = domUpdates.formatDate(order.date);
     $('.main__orders-search-results').text('')
     $('#main__input-search-orders').val('')
-    let betterDate = domUpdates.formatDate(order.date);
     $('.main__orders-search-results').append(
       `<article class="order-card">
           <h5>Search Results</h5>
@@ -165,10 +165,28 @@ let domUpdates = {
           <h4 class="main__order-searched-order-info">Item Ordered: ${order.food}</h4>
           <h4 class="main__order-searched-order-info">Order Total: $${order.totalCost}</h4>
         </article>`)
-  }
+  },
 
+  displayNoBookingsForSelectedDate(date) {
+    let betterDate = domUpdates.formatDate(date);
+    $('.main__rooms-search-results').text('')
+    $('#main__input-search-room').val('');
+    $('.main__rooms-search-results').append(`<h5>Search Results</h5>
+        <h4>No Bookings for ${betterDate}</h4>`)
+  },
 
+  displayDateSearchedBookings(booking) {
+    let betterDate = domUpdates.formatDate(booking.date);
+    $('.main__rooms-search-results').text('')
+    $('#main__input-search-room').val('');
+
+    $('.main__rooms-search-results').append(`
+      <h5>Search Results</h5>
+      <article class="booking-card">
+        <h4 class="main__rooms-searched-booking-info">Booking Date: ${betterDate}</h4>
+        <h4 class="main__rooms-searched-booking-info">Room Number: ${booking.roomNumber}</h4>
+      </article>`)
+  },
 
 }
-
 export default domUpdates;

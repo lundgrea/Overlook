@@ -167,12 +167,18 @@ class Hotel {
     if(daysOrders.length === 0) {
       domUpdates.displayNoOrdersForSelectedDate(date)
     } else {      
-      daysOrders.forEach(order => {
-        domUpdates.displayDateSearchedOrders(order)
-      })
+      daysOrders.forEach(order => domUpdates.displayDateSearchedOrders(order))
     }
   }
 
+  searchBookingsByDate(date) {
+    let daysBookings = this.allBookings.filter(booking => booking.date === date)
+    if (daysBookings.length === 0) {
+      domUpdates.displayNoBookingsForSelectedDate(date);
+    } else {
+      daysBookings.forEach(booking => domUpdates.displayDateSearchedBookings(booking))
+    } 
+  }
   resetCustomer() {
     this.currentCustomer = {}  
   }

@@ -82,9 +82,15 @@ $(document).ready(() => {
     console.log('heard the click within the orders')
     e.preventDefault;
     let searchResult = $('#main__input-search-orders').val()
-    console.log(searchResult)
     hotel.searchRoomServiceOrdersByDate(searchResult)
   });
+
+  $('#main__button-search-rooms').click((e) => {
+    e.preventDefault;
+    let searchResult = $('#main__input-search-room').val();
+    console.log(searchResult);
+    hotel.searchBookingsByDate(searchResult);
+  })
 
 
 console.log('This is the JavaScript entry file - your code begins here.');
