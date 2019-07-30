@@ -194,7 +194,10 @@ class Hotel {
       return this.allRooms.filter(room => room.number === number)
     })
     let availableRooms = availableRoomsNested.flat()
+    console.log(availableRooms)
+    domUpdates.displayRoomsAvailable(availableRooms)
   }
+
 
   createNewBooking() {
   }

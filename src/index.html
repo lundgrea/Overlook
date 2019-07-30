@@ -104,7 +104,8 @@
             <img class="main__input main__button" id="main__button-search-rooms" src="https://image.flaticon.com/icons/svg/482/482852.svg" alt="Rooms Search Button" height="40px" width="40px">
             <input class="main__input main__input-search main__date-search" id="main__input-search-room" type="text" placeholder="yyyy/mm/dd">
             </input>
-            <section class="main__rooms-search-results"></section>
+            <section class="main__rooms-search-results">
+            </section>
           </div>
         </fieldset>
         <article class="main__customer-unselected" id="main__customer-rooms-unselected">
@@ -132,9 +133,35 @@
       </section>
 
 
+      <section class="main__section" id="main__section-booking">
+        <h5>available rooms</h5>
+        <table style="width:100%">
+          <tr class="main__rooms-chart" id="main__rooms-chart-labels">
+            <th>Room Number</th>
+            <th>Room Type</th> 
+            <th>Number of Beds</th>
+            <th>Bed Size</th>
+            <th>Cost Per Night</th>
+            <th>Bidet</th>
+            <th>Available</th>
+          </tr>
+          <tr class="main__rooms-chart" id="main__rooms-chart-data">
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-number"></td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-type"></td> 
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-num-beds"></td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-bed-size"></td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-cost"></td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-bidet"></td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-availability"></td>
+          </tr>
+        </table>
+      </section>
+
       
     </main>
     <footer class="footer__prompt">
+      <h6 class="footer__prompt-main-message" id="footer__prompt-book-tonight">The current customer does not have a room booked yet for tonight.</h6>
+      <h5 class="footer__prompt-clickable" id="footer__button-book-now">book now</h5>`
     </footer>
   </body>
 </html>

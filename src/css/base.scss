@@ -146,12 +146,20 @@ h6 {
   justify-content: center;
 }
 
+#main__section-booking {
+ background-color: green 
+}
+
 .main__date-search{
   width: 140px;
 }
 
 fieldset {
   margin: 15px 15px 15px 15px
+}
+
+table, th, td {
+  border: 1px solid black;
 }
 
 .main__button {

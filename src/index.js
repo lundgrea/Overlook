@@ -64,6 +64,10 @@ $(document).ready(() => {
     domUpdates.homeButtonHandler();
   });
 
+  $('#footer__button-book-now').click(() => {
+    domUpdates.bookNowButtonHandler();
+  })
+
   $('#aside__button-search').click((e) => {
     e.preventDefault();
     let searchResult = $('#aside__input-search').val()

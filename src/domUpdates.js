@@ -10,7 +10,8 @@ let domUpdates = {
     $('#main__section-customers').hide();
     $('.main__customer-selected').hide();
     $('#main__section-orders').hide();
-    $('.footer__prompt').hide()
+    $('.footer__prompt').hide();
+    $('#main__section-booking').hide()
     $('.splash').delay(2000).fadeOut("slow");
     $('.page').delay(2500).fadeIn("slow");
   },
@@ -24,6 +25,7 @@ let domUpdates = {
     $('#main__section-home').hide();
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
+    $('#main__section-booking').hide()
     $('#main__section-orders').show();
   },
 
@@ -32,6 +34,7 @@ let domUpdates = {
     $('#main__section-home').hide();
     $('#main__section-orders').hide();
     $('#main__section-customers').hide();
+    $('#main__section-booking').hide()
     $('#main__section-rooms').show();
   },
 
@@ -40,6 +43,7 @@ let domUpdates = {
     $('#main__section-home').hide();
     $('#main__section-orders').hide();
     $('#main__section-rooms').hide();
+    $('#main__section-booking').hide()
     $('#main__section-customers').show();
   },
 
@@ -48,7 +52,18 @@ let domUpdates = {
     $('#main__section-orders').hide();
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
+    $('#main__section-booking').hide()
     $('#main__section-home').show();
+  },
+
+  bookNowButtonHandler() {
+    $('#main__section-orders').hide();
+    $('#main__section-rooms').hide();
+    $('#main__section-customers').hide();
+    $('#main__section-home').hide();
+    $('.footer__prompt').hide();
+    $('#main__section-booking').show();
+
   },
 
   displayDate() {
@@ -102,11 +117,8 @@ let domUpdates = {
       )
   },
 
-  displayPromptToBookTonight(customerName) {
+  displayPromptToBookTonight() {
     $('.footer__prompt').show();
-    $('.footer__prompt').append(`
-      <h6 class="footer__prompt-main-message" id="footer__prompt-book-tonight">${customerName} does not have a room booked yet for tonight.</h6>
-      <h5 class="footer__prompt-clickable">book now</h5>`)
   },
 
   displayNoUserByNamePrompt(enteredName) {
@@ -179,13 +191,32 @@ let domUpdates = {
     let betterDate = domUpdates.formatDate(booking.date);
     $('.main__rooms-search-results').text('')
     $('#main__input-search-room').val('');
-
     $('.main__rooms-search-results').append(`
       <h5>Search Results</h5>
       <article class="booking-card">
         <h4 class="main__rooms-searched-booking-info">Booking Date: ${betterDate}</h4>
         <h4 class="main__rooms-searched-booking-info">Room Number: ${booking.roomNumber}</h4>
       </article>`)
+  },
+
+  displayRoomsAvailable(rooms) {
+    $('.main__rooms-search-results').text('')
+    $('#main__input-search-room').val('');
+    $('.main__rooms-search-results').append(`
+      <h5 class="main__rooms-search-headline">Search Results</h5>`)
+    rooms.map(room => {
+      $('.main__rooms-search-headline').after(`
+          <tr class="main__rooms-chart" id="main__rooms-chart-data">
+             <td class="main__rooms-chart-line" id="main__rooms-chart-room-number">${room.number}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-type">${room.roomType}</td> 
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-num-beds">${room.numBeds}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-bed-size">${room.bedSize}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-cost">${room.costPerNight}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-bidet">${room.bidet}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-availability">Yes</td>
+          </tr>
+        </table>`)
+    })
   },
 
 }
