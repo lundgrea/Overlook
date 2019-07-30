@@ -26,6 +26,7 @@ class Hotel {
     this.todaysTotalRevenue = null;
     this.bestDay = null;
     this.worstDay = null;
+    this.searchDate = null;
   }
 
   grandOpening() {
@@ -160,6 +161,24 @@ class Hotel {
     }
   }
 
+  searchRoomServiceOrdersByDate(date) {
+    let daysOrders = this.allRoomServiceOrders.filter(order => order.date === date)
+    console.log(daysOrders)
+    if(daysOrders.length === 0) {
+      domUpdates.displayNoOrdersForSelectedDate(date)
+    } else {      
+      daysOrders.forEach(order => domUpdates.displayDateSearchedOrders(order))
+    }
+  }
+
+  searchBookingsByDate(date) {
+    let daysBookings = this.allBookings.filter(booking => booking.date === date)
+    if (daysBookings.length === 0) {
+      domUpdates.displayNoBookingsForSelectedDate(date);
+    } else {
+      daysBookings.forEach(booking => domUpdates.displayDateSearchedBookings(booking))
+    } 
+  }
   resetCustomer() {
     this.currentCustomer = {}  
   }
@@ -169,12 +188,7 @@ class Hotel {
 
   createNewRoomServiceOrder() {
   }
-
-  displayTodayRoomServiceOrders(date) {
-  }
-
-  searchRoomServiceOrdersByDate(date) {
-  }
+ 
 
 
 

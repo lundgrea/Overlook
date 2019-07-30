@@ -114,7 +114,6 @@ let domUpdates = {
   },
 
   resetField() {
-    console.log('in the reset method')
     $('.aside__input').val('');
   },
 
@@ -123,7 +122,6 @@ let domUpdates = {
   },
 
   displayOrdersToday(order) {
-    console.log('inside order method')
     $('.main__section-orders').append(
       `<article class="order-card">
           <h4 class="main__orders-general-info" id="main__orders-general-info-item">Item: ${order.food}</h4>
@@ -147,7 +145,48 @@ let domUpdates = {
     $('$main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`)
   }, 
 
+  displayNoOrdersForSelectedDate(date) {
+    let betterDate = domUpdates.formatDate(date);
+    $('.main__orders-search-results').text('')
+    $('#main__input-search-orders').val('')
+    $('.main__orders-search-results').append(`
+        <h5>Search Results</h5>
+        <h4>No Room Service Orders for ${betterDate}</h4>`)
+  },
+
+  displayDateSearchedOrders(order) {
+    let betterDate = domUpdates.formatDate(order.date);
+    $('.main__orders-search-results').text('')
+    $('#main__input-search-orders').val('')
+    $('.main__orders-search-results').append(
+      `<article class="order-card">
+          <h5>Search Results</h5>
+          <h4 class="main__order-searched-order-info">Order Date: ${betterDate}</h4>
+          <h4 class="main__order-searched-order-info">Item Ordered: ${order.food}</h4>
+          <h4 class="main__order-searched-order-info">Order Total: $${order.totalCost}</h4>
+        </article>`)
+  },
+
+  displayNoBookingsForSelectedDate(date) {
+    let betterDate = domUpdates.formatDate(date);
+    $('.main__rooms-search-results').text('')
+    $('#main__input-search-room').val('');
+    $('.main__rooms-search-results').append(`<h5>Search Results</h5>
+        <h4>No Bookings for ${betterDate}</h4>`)
+  },
+
+  displayDateSearchedBookings(booking) {
+    let betterDate = domUpdates.formatDate(booking.date);
+    $('.main__rooms-search-results').text('')
+    $('#main__input-search-room').val('');
+
+    $('.main__rooms-search-results').append(`
+      <h5>Search Results</h5>
+      <article class="booking-card">
+        <h4 class="main__rooms-searched-booking-info">Booking Date: ${betterDate}</h4>
+        <h4 class="main__rooms-searched-booking-info">Room Number: ${booking.roomNumber}</h4>
+      </article>`)
+  },
 
 }
-
 export default domUpdates;

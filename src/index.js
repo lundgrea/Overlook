@@ -71,15 +71,25 @@ $(document).ready(() => {
     domUpdates.resetField()
   });
 
-  $('#main__input-search-room').click(() => {
-    $( "#main__button-search-rooms" ).datepicker();
-  });
-
   $('#aside__button-add').click((e) => {
     e.preventDefault();
     let newUserName = $('#aside__input-add').val()
     hotel.generateNewCustomer(newUserName)
     domUpdates.resetField()
+  });
+
+  $('#main__button-search-orders').click((e) => {
+    console.log('heard the click within the orders')
+    e.preventDefault;
+    let searchResult = $('#main__input-search-orders').val()
+    hotel.searchRoomServiceOrdersByDate(searchResult)
+  });
+
+  $('#main__button-search-rooms').click((e) => {
+    e.preventDefault;
+    let searchResult = $('#main__input-search-room').val();
+    console.log(searchResult);
+    hotel.searchBookingsByDate(searchResult);
   })
 
 
