@@ -73,7 +73,7 @@ let domUpdates = {
 
   displayNoBookingsMessage(customerName) {
     $('#main__customer-rooms-selected-booking').append(
-      `<h5>No current or past bookings for ${customerName}</h5>`)
+    `<h5>No current or past bookings for ${customerName}</h5>`)
   },
 
   displayCustomerBookings(booking) {
@@ -121,6 +121,32 @@ let domUpdates = {
   displayNoUserByIDPrompt(enteredID) {
      $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredID} within the database. Please search by another ID.`)
   },
+
+  displayOrdersToday(order) {
+    console.log('inside order method')
+    $('.main__section-orders').append(
+      `<article class="order-card">
+          <h4 class="main__orders-general-info" id="main__orders-general-info-item">Item: ${order.food}</h4>
+          <h4 class="main__orders-general-info"  id="main__orders-general-info-total">Total: $${order.totalCost}</h4>
+        </article>`)
+  }, 
+
+  displayOrdersTodayTotalCost(cost) {
+    $('#main__customer-selected-order-total-today').text(`Today's Order Total: $${cost}`)
+  },
+
+  displayNoOrderCostToday(name) {
+    $('#main__customer-selected-order-total-today').text(`Order Total For Today: $0`)
+  },
+
+  displayAllTimeOrderCostForCustomer(cost) {
+    $('#main__customer-selected-order-total-all-time').text(`All Time Order Total: $${cost}`)
+  }, 
+
+   displayNoOrderCostForCustomer(name) {
+    $('$main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`)
+  }, 
+
 
 }
 

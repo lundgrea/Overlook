@@ -38,6 +38,7 @@ class Hotel {
     this.calculateRevenueToday(this.unformattedDate)
     this.findBestDay();
     this.findWorstDay();
+    this.populateTodaysOrders();
   }
 
   getToday() {
@@ -132,6 +133,7 @@ class Hotel {
   generateNewCustomer(nameInput) {
     let randomNumber = Math.floor(Math.random() * (50 - 1) + 100)
     this.currentCustomer = new Customer({id: randomNumber, name: nameInput}, this.allBookings, this.allRoomServiceOrders)
+    this.currentCustomer.customerHandler();
     domUpdates.displayCustomerInfo(this.currentCustomer);
     console.log(this.currentCustomer)
   }
@@ -147,6 +149,19 @@ class Hotel {
       var unformattedDate = `${year}/${month}/${day}`
     }
     this.unformattedDate = unformattedDate;
+  }
+
+  populateTodaysOrders() {
+    if (this.todaysOrders.length === 0) {
+      //   add error handling    //
+    } else {
+      console.log(this.todaysOrders)
+      this.todaysOrders.map(order => domUpdates.displayOrdersToday(order))
+    }
+  }
+
+  resetCustomer() {
+    this.currentCustomer = {}  
   }
 
   createNewBooking() {
