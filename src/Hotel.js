@@ -160,6 +160,10 @@ class Hotel {
     }
   }
 
+  resetCustomer() {
+    this.currentCustomer = {}  
+  }
+
   createNewBooking() {
   }
 
