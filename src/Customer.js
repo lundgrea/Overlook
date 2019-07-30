@@ -16,7 +16,7 @@ class Customer {
     this.unformattedDate = null;
     this.todaysBooking = {};
     this.todaysOrder = {};
-    this.totalRoomServiceCharges = null;
+    this.allTimeTotalRoomServiceCharges = null;
   }
 
   customerHandler() {
@@ -68,29 +68,45 @@ class Customer {
 
   displayOrders() {
     if (this.orders.length === 0) {
-      domUpdates.displayNoOrderMessage(this.name)
+      domUpdates.displayNoOrderMessage(this.name);
     } else {
-      this.orders.map(order => domUpdates.displayCustomerOrders(order))
+      this.orders.map(order => domUpdates.displayCustomerOrders(order));
     }
   }
 
   checkBookingsForToday() {
     console.log(this.bookings)
-    this.todaysBooking = this.bookings.find(booking => booking.date === this.unformattedDate)
-    console.log(this.todaysBookings)
+    this.todaysBooking = this.bookings.find(booking => this.unformattedDate === booking.date)
+    console.log(this.todaysBookings);
     if (this.todaysBookings === undefined) {
-      console.log('no bookings for today')
-      domUpdates.displayPromptToBookTonight(this.name)
+      console.log('no bookings for today');
+      domUpdates.displayPromptToBookTonight(this.name);
     }
     return this.todaysBookings
   }
 
   calculateRoomServiceTotal() {
-  //   this.totalRoomServiceCharges = 
+    console.log(this.orders)
+    if (this.orders.length === 0) {
+      // domUpdates.displayNoOrderCostForCustomer(this.name);
+    } else {
+      this.allTimeTotalRoomServiceCharges = this.orders.reduce((total, order) => {
+        total = total + order.totalCost
+        console.log(total)
+        return total
+      }, 0)
+    }
+      console.log(this.allTimeTotalRoomServiceCharges)
+      domUpdates.displayAllTimeOrderCostForCustomer(this.allTimeTotalRoomServiceCharges);
   }
 
   calculateRoomServiceToday() {
-  //   this.todaysOrder = this.orders.find(order => this.unformatted date === order.date)
+    this.todaysOrder = this.orders.find(order => this.unformattedDate === order.date)
+    if(this.todaysOrder === undefined){
+      domUpdates.displayNoOrderCostToday(this.name)
+    } else {
+    domUpdates.displayOrdersTodayTotalCost(this.todaysOrder.totalCost)
+    }
   }
 
   updateBooking() {
