@@ -10,7 +10,6 @@ let domUpdates = {
     $('#main__section-customers').hide();
     $('.main__customer-selected').hide();
     $('#main__section-orders').hide();
-    // $('.main__section-orders-headline').hide()
     $('.footer__prompt').hide()
     $('.splash').delay(2000).fadeOut("slow");
     $('.page').delay(2500).fadeIn("slow");
@@ -74,7 +73,7 @@ let domUpdates = {
 
   displayNoBookingsMessage(customerName) {
     $('#main__customer-rooms-selected-booking').append(
-      `<h5>No current or past bookings for ${customerName}</h5>`)
+    `<h5>No current or past bookings for ${customerName}</h5>`)
   },
 
   displayCustomerBookings(booking) {
@@ -122,6 +121,11 @@ let domUpdates = {
   displayNoUserByIDPrompt(enteredID) {
      $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredID} within the database. Please search by another ID.`)
   },
+
+  displayCustomerOrderBigNums() {
+    $('$main__customer-selected-order-total-all-time').val()
+    $('#main__customer-selected-order-total-today').val()
+  }, 
 
   displayOrdersToday(order) {
     console.log('inside order method')

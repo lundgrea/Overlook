@@ -133,6 +133,7 @@ class Hotel {
   generateNewCustomer(nameInput) {
     let randomNumber = Math.floor(Math.random() * (50 - 1) + 100)
     this.currentCustomer = new Customer({id: randomNumber, name: nameInput}, this.allBookings, this.allRoomServiceOrders)
+    this.currentCustomer.customerHandler();
     domUpdates.displayCustomerInfo(this.currentCustomer);
     console.log(this.currentCustomer)
   }

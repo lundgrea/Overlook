@@ -13,20 +13,40 @@ class Customer {
     this.bookings = [];
     this.orders = [];
     this.date = null;
+    this.unformattedDate = null;
     this.todaysBooking = {};
+    this.todaysOrder = {};
+    this.totalRoomServiceCharges = null;
   }
 
   customerHandler() {
-    this.getToday()
+    this.getToday();
+    this.unformatDate(this.date);
     this.gatherBookingInformation();
     this.gatherOrderInformation();
     this.displayBookings();
     this.displayOrders();
-    this.checkBookingsForToday(this.date)
+    this.checkBookingsForToday();
+    this.calculateRoomServiceTotal();
+    this.calculateRoomServiceToday();
   }
 
   getToday() {
     this.date = new Date().toLocaleDateString();
+  }
+
+  unformatDate(date) {
+    let dateArray = date.split('/')
+    let day = dateArray[1];
+    let month = dateArray[0];
+    let year = dateArray[2];
+    if (month <= 9) {
+      var theUnformattedDate = `${year}/0${month}/${day}`;
+      this.unformattedDate = theUnformattedDate
+    } else {
+      var theLaterUnformattedDate = `${year}/${month}/${day}`
+      this.unformattedDate = theLaterUnformattedDate
+    }
   }
 
   gatherBookingInformation() {
@@ -49,19 +69,28 @@ class Customer {
   displayOrders() {
     if (this.orders.length === 0) {
       domUpdates.displayNoOrderMessage(this.name)
-      //   console.log(TEST THIS WITH NEW USER)    //
     } else {
       this.orders.map(order => domUpdates.displayCustomerOrders(order))
     }
   }
 
-  checkBookingsForToday(today) {
-    this.todaysBooking = this.bookings.find(booking => booking.date === today)
+  checkBookingsForToday() {
+    console.log(this.bookings)
+    this.todaysBooking = this.bookings.find(booking => booking.date === this.unformattedDate)
+    console.log(this.todaysBookings)
     if (this.todaysBookings === undefined) {
       console.log('no bookings for today')
       domUpdates.displayPromptToBookTonight(this.name)
     }
     return this.todaysBookings
+  }
+
+  calculateRoomServiceTotal() {
+  //   this.totalRoomServiceCharges = 
+  }
+
+  calculateRoomServiceToday() {
+  //   this.todaysOrder = this.orders.find(order => this.unformatted date === order.date)
   }
 
   updateBooking() {
