@@ -195,7 +195,20 @@ class Hotel {
     })
     let availableRooms = availableRoomsNested.flat()
     console.log(availableRooms)
-    domUpdates.displayRoomsAvailable(availableRooms)
+    return availableRooms
+  }
+
+  displayDatedRoomAvailability(date) {
+    domUpdates.displayRoomsAvailable(this.findRoomsNotBookedByDate(date))
+  }
+
+  displayTodaysRoomAvailability() {
+    domUpdates.displayTodaysAvailableRooms(this.findRoomsNotBookedByDate(this.unformattedDate))
+  }
+
+
+  filterAvailableRoomByType(date,type) {
+  return this.findRoomsNotBookedByDate(date).filter(room => room.roomType === type)
   }
 
 

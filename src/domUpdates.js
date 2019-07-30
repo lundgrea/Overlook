@@ -63,7 +63,6 @@ let domUpdates = {
     $('#main__section-home').hide();
     $('.footer__prompt').hide();
     $('#main__section-booking').show();
-
   },
 
   displayDate() {
@@ -222,5 +221,27 @@ let domUpdates = {
     })
   },
 
+  displayTodaysAvailableRooms(rooms) {
+    console.log(rooms)
+    $('.main__rooms-tonight-search-results').append(`
+      <h5 class="main__rooms-search-headline">Rooms Available Today</h5>`)
+    rooms.map(room => {
+      $('.main__rooms-search-headline').after(`
+          <tr class="main__rooms-chart" id="main__rooms-chart-data">
+             <td class="main__rooms-chart-line" id="main__rooms-chart-room-number">${room.number}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-type">${room.roomType}</td> 
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-num-beds">${room.numBeds}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-bed-size">${room.bedSize}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-cost">${room.costPerNight}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-bidet">${room.bidet}</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-availability">Yes</td>
+          </tr>
+        </table>`)
+    })
+  },
+
+  displayAvailableRoomsByType() {
+
+  }
 }
 export default domUpdates;

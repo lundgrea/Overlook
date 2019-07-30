@@ -66,6 +66,7 @@ $(document).ready(() => {
 
   $('#footer__button-book-now').click(() => {
     domUpdates.bookNowButtonHandler();
+    hotel.displayTodaysRoomAvailability()
   })
 
   $('#aside__button-search').click((e) => {
@@ -93,7 +94,7 @@ $(document).ready(() => {
     e.preventDefault;
     let searchResult = $('#main__input-search-room').val();
     console.log(searchResult);
-    hotel.findRoomsNotBookedByDate(searchResult);
+    hotel.displayDatedRoomAvailability(searchResult);
   })
 
 

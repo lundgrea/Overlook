@@ -135,7 +135,31 @@
 
       <section class="main__section" id="main__section-booking">
         <h5>available rooms</h5>
-        <table style="width:100%">
+
+        <fieldset>
+          <form>
+            <h2>Select Room Type</h2>
+            <div class="checkbox-container">
+              <label for="residential-suite">Residential Suite</label>
+              <input class="checkbox" type="checkbox" name="residential-suite" value="residential suite" id="residential-suite">
+            </div>
+            <div class="checkbox-container">
+              <label for="suite">Suite</label>
+              <input class="checkbox" type="checkbox" name="suite" value="suite" id="suite">
+            </div>
+            <div class="checkbox-container">
+              <label for="junior-suite">Junior Suite</label>
+              <input class="checkbox" type="checkbox" name="junior-suite" value="junior-suite" id="junior-suite">
+            </div>
+            <div class="checkbox-container">
+              <label for="single-room">Single Room</label>
+              <input class="checkbox" type="checkbox" name="single-room" value="single-room" id="single-room">
+            </div>
+          </form>
+        </fieldset>
+        <article class="main__rooms-tonight-search-results">
+        </article>
+ <!--        <table style="width:100%">
           <tr class="main__rooms-chart" id="main__rooms-chart-labels">
             <th>Room Number</th>
             <th>Room Type</th> 
@@ -154,7 +178,7 @@
             <td class="main__rooms-chart-line" id="main__rooms-chart-room-bidet"></td>
             <td class="main__rooms-chart-line" id="main__rooms-chart-room-availability"></td>
           </tr>
-        </table>
+        </table> -->
       </section>
 
       
