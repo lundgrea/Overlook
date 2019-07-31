@@ -3,12 +3,19 @@ const expect = chai.expect;
 
 import Hotel from '../src/Hotel';
 import Customer from '../src/Customer';
+import spies from 'chai-spies';
 import testUsers from '../src/users-test-data';
 import testRooms from '../src/rooms-test-data';
 import testRoomServices from '../src/roomServices-test-data';
 import testBookings from '../src/bookings-test-data';
 
 let hotel;
+
+chai.use(spies);
+
+chai.spy.on(domUpdates, ['pageLoadHandler', 'displayRoomsAvailable', 'orderButtonHandler', 'roomButtonHandler', 'customerButtonHandler', 'homeButtonHandler', 'bookNowButtonHandler', 'displayDate' , 'formatDate', 'clearFields', 'displayCustomerInfo', 'displayNoBookingsMessage', 'displayCustomerBookings', 'displayNoOrderMessage', 'displayCustomerOrders', 'displayPromptToBookTonight', 'displayNoUserByNamePrompt', 'resetFields', 'displayNoUserByIDPrompt', 'displayOrdersToday', 'displayOrdersTodayTotalCost', 'displayNoOrderCostToday', 'displayAllTimeOrderCostForCustomer', 'displayNoOrderCostForCustomer', 'displayNoOrdersForSelectedDate', 'displayDateSearchedOrders', 'displayNoBookingsForSelectedDate', 'displayDateSearchedBookings', 'displayRoomsAvailable', 'displayTodaysAvailableRooms', ], () => {});
+
+
 
 let info = 
   {
@@ -155,5 +162,11 @@ describe('Hotel', function() {
     hotel.generateNewCustomer('Alyssa Lundgren');
     expect(hotel.currentCustomer.name).to.equal('Alyssa Lundgren');
    });
+
+  it("should display information to the page", function() {
+    hotel.displayDatedRoomAvailability()
+    expect(domUpdates.displayTodaysAvailableRooms).to.have.been.called(1);
+  });
+
 
 });
