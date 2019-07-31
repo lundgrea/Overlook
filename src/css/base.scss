@@ -22,12 +22,12 @@ body {
 }
 
 h1 {
-  font-family: $font-main;
-  display: inline-block;
-  margin: 20px 0px 40px 35px;
-  font-size: 67px;
   color: $color-tertiary;
+  display: inline-block;
+  font-family: $font-main;
+  font-size: 67px;
   font-weight: 400;
+  margin: 20px 0px 40px 35px;
 }
 
 .logo-thin {
@@ -45,9 +45,9 @@ li {
 }
 
 ul {
-  margin: 40px 50px 50px 0px;
   color: $color-tertiary;
   font-size: 22px;
+  margin: 40px 50px 50px 0px;
 }
 
 li {
@@ -62,18 +62,18 @@ header {
 
 aside {
   background-color: $color-secondary;
-  grid-area: aside;
   color: $color-tertiary;
-  text-align: center;
-  margin-top: 0px;
   float: left;
-  min-width: 300px;
+  grid-area: aside;
   height: 100%;;
+  margin-top: 0px;
+  min-width: 300px;
+  text-align: center;
 }
 
 .aside__button {
-  filter: invert(.27);
   background-color: $color-tertiary;
+  filter: invert(.27);
   max-height: 40px;
   padding: 5px;
 }
@@ -83,7 +83,7 @@ aside {
 }
 
 .aside__button-add {
-    padding: 9px 0px 9px 0px;
+  padding: 9px 0px 9px 0px;
 }
 
 .bignum {
@@ -98,8 +98,8 @@ aside {
 
 input {
   height: 40px;
-  width: 70%;
   margin: 0px 0px 0px 0px;
+  width: 70%;
 }
 
 ::placeholder {
@@ -108,23 +108,23 @@ input {
 }
 
 main {
-  grid-area: main;
   background-color: blanchedalmond;
   color: #37384E;
+  grid-area: main;
   height: 100%;
-  position: relative;
   overflow:auto; 
+  position: relative;
 }
 
 .main__section {
-  text-align: center;
   font-size: 16px;
+  text-align: center;
 }
 
 h5 {
   font-size: 28px;
-  margin: 25px 0px 0px 0px;
   font-weight: 700;
+  margin: 25px 0px 0px 0px;
   padding: 0px;
   text-align: center;
 }
@@ -161,8 +161,8 @@ table, th, td {
 }
 
 .main__button {
-  filter: invert(.27);
   background-color: $color-tertiary;
+  filter: invert(.27);
   max-height: 40px;
   padding: 5px;
 }
@@ -178,14 +178,14 @@ table, th, td {
 
 .main__customer-selected {
   border: 2px solid black;
-  max-width: 75%;
   display: inline-block;
+  max-width: 75%;
 }
 
 .main__customer-rooms-selected-booking {
   border: 2px solid black;
-  min-width: 70%;
   display: inline-block;
+  min-width: 70%;
 }
 
 .order-card,
@@ -200,15 +200,15 @@ table, th, td {
 
 footer {
   background-color: #849974;
-  width:100%;
+  bottom: 0;
   height: 100px;
-  position:absolute;
-  bottom:0;
+  position: absolute;
+  width:100%;
 }
 
 .footer__prompt-main-message {
-  margin: 13px 0px 0px 0px;
   font-size: 20px;
+  margin: 13px 0px 0px 0px;
   text-align: center;
 }
 
