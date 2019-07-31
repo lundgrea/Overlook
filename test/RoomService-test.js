@@ -4,7 +4,7 @@ const expect = chai.expect;
 import RoomService from '../src/RoomService';
 import testRoomServices from '../src/roomServices-test-data';
 
-let roomService
+let roomService;
 
 beforeEach(() => {
   roomService = new RoomService(testRoomServices, 14, "2019/07/29", "Rustic Concrete Sandwich", 14.9)

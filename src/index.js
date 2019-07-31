@@ -4,13 +4,6 @@ import './css/base.scss';
 import Hotel from './Hotel';
 import domUpdates from './domUpdates.js';
 
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
-
-
-// const hotel;
-
 let hotel
 
 let usersFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users").then(response => response.json());
@@ -26,7 +19,7 @@ Promise.all([usersFetch, bookingsFetch, roomsFetch, roomServiceFetch])
       allData['bookings'] = data[1].bookings;
       allData['rooms'] = data[2].rooms;
       allData['roomService'] = data[3].roomServices;
-      return allData
+      return allData;
     })
   .then(data => hotel = new Hotel(data))
   .then(hotel => console.log(hotel))
@@ -42,7 +35,7 @@ $(document).ready(() => {
     $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
     $('#aside__bignum-percentage-span').text(hotel.todaysPercentageOccupied);
     $('#main__bignum-service-charges-span').text(hotel.todaysTotalOrderRevenue);
-    $('#main__bignums-revenue-span').text(hotel.todaysTotalRevenue)
+    $('#main__bignums-revenue-span').text(hotel.todaysTotalRevenue);
     $('#main__bignum-record-high').text(domUpdates.formatDate(hotel.bestDay));
     $('#main__bignum-record-low').text(domUpdates.formatDate(hotel.worstDay));
   }, 2500);
@@ -66,28 +59,29 @@ $(document).ready(() => {
 
   $('#footer__button-book-now').click(() => {
     domUpdates.bookNowButtonHandler();
-    hotel.displayTodaysRoomAvailability()
+    hotel.displayTodaysRoomAvailability();
   })
 
   $('#aside__button-search').click((e) => {
     e.preventDefault();
-    let searchResult = $('#aside__input-search').val()
+    domUpdates.clearFields();
+    let searchResult = $('#aside__input-search').val();
     hotel.findCustomerByName(searchResult);
-    domUpdates.resetField()
+    domUpdates.resetField();
   });
 
   $('#aside__button-add').click((e) => {
     e.preventDefault();
-    let newUserName = $('#aside__input-add').val()
-    hotel.generateNewCustomer(newUserName)
-    domUpdates.resetField()
+    domUpdates.clearFields();
+    let newUserName = $('#aside__input-add').val();
+    hotel.generateNewCustomer(newUserName);
+    domUpdates.resetField();
   });
 
   $('#main__button-search-orders').click((e) => {
-    console.log('heard the click within the orders')
     e.preventDefault;
-    let searchResult = $('#main__input-search-orders').val()
-    hotel.searchRoomServiceOrdersByDate(searchResult)
+    let searchResult = $('#main__input-search-orders').val();
+    hotel.searchRoomServiceOrdersByDate(searchResult);
   });
 
   $('#main__button-search-rooms').click((e) => {
@@ -99,33 +93,33 @@ $(document).ready(() => {
   $('#residential-suite').click((e) => {
     e.preventDefault;
     if ($('#residential-suite').prop("checked") == true) {
-      $('.main__rooms-tonight-search-results').empty()
-      hotel.filterAvailableRoomByType("residential suite") 
+      $('.main__rooms-tonight-search-results').empty();
+      hotel.filterAvailableRoomByType("residential suite") ;
     } else {
-      $('.main__rooms-tonight-search-results').empty()
-      hotel.displayTodaysRoomAvailability()
+      $('.main__rooms-tonight-search-results').empty();
+      hotel.displayTodaysRoomAvailability();
     }
   })
 
   $('#suite').click((e) => { 
     e.preventDefault;
     if($('#suite').prop("checked") == true) {
-      $('.main__rooms-tonight-search-results').empty()
-      hotel.filterAvailableRoomByType("suite")  
+      $('.main__rooms-tonight-search-results').empty();
+      hotel.filterAvailableRoomByType("suite")  ;
     } else {
-      $('.main__rooms-tonight-search-results').empty()
-      hotel.displayTodaysRoomAvailability()
+      $('.main__rooms-tonight-search-results').empty();
+      hotel.displayTodaysRoomAvailability();
     }
   })
 
   $('#junior-suite').click((e) => { 
     e.preventDefault;
     if($('#junior-suite').prop("checked") == true) {
-      $('.main__rooms-tonight-search-results').empty()
-      hotel.filterAvailableRoomByType("junior suite") 
+      $('.main__rooms-tonight-search-results').empty();
+      hotel.filterAvailableRoomByType("junior suite") ;
     } else {
-      $('.main__rooms-tonight-search-results').empty()
-      hotel.displayTodaysRoomAvailability()
+      $('.main__rooms-tonight-search-results').empty();
+      hotel.displayTodaysRoomAvailability();
     }
   });
 
@@ -133,11 +127,11 @@ $(document).ready(() => {
   $('#single-room').click((e) => { 
     e.preventDefault;
     if($('#single-room').prop("checked") === true){
-      $('.main__rooms-tonight-search-results').empty()
-      hotel.filterAvailableRoomByType("single room") 
+      $('.main__rooms-tonight-search-results').empty();
+      hotel.filterAvailableRoomByType("single room") ;
     } else {
-      $('.main__rooms-tonight-search-results').empty()
-      hotel.displayTodaysRoomAvailability()
+      $('.main__rooms-tonight-search-results').empty();
+      hotel.displayTodaysRoomAvailability();
     }
   })
 

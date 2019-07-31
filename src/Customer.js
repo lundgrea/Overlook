@@ -36,16 +36,16 @@ class Customer {
   }
 
   unformatDate(date) {
-    let dateArray = date.split('/')
+    let dateArray = date.split('/');
     let day = dateArray[1];
     let month = dateArray[0];
     let year = dateArray[2];
     if (month <= 9) {
       var theUnformattedDate = `${year}/0${month}/${day}`;
-      this.unformattedDate = theUnformattedDate
+      this.unformattedDate = theUnformattedDate;
     } else {
       var theLaterUnformattedDate = `${year}/${month}/${day}`
-      this.unformattedDate = theLaterUnformattedDate
+      this.unformattedDate = theLaterUnformattedDate;
     }
   }
 
@@ -54,15 +54,14 @@ class Customer {
   }
 
   gatherOrderInformation() {
-    this.orders = this.masterOrders.filter(order => this.id === order.userID)
+    this.orders = this.masterOrders.filter(order => this.id === order.userID);
   }
 
   displayBookings() {
     if(this.bookings.length === 0) {
-      domUpdates.displayNoBookingsMessage(this.name)
-      //   console.log(TEST THIS WITH NEW USER)    //
+      domUpdates.displayNoBookingsMessage(this.name);
     } else {
-      this.bookings.map(booking => domUpdates.displayCustomerBookings(booking))
+      this.bookings.map(booking => domUpdates.displayCustomerBookings(booking));
     }
   }
 
@@ -76,36 +75,33 @@ class Customer {
 
   checkBookingsForToday() {
     this.todaysBooking = this.bookings.filter(booking => {
-      return booking.date == this.unformattedDate
+      return booking.date == this.unformattedDate;
     })
-    console.log(this.todaysBooking)
     if (this.todaysBooking.length === 0) {
-      console.log('no bookings for today');
       domUpdates.displayPromptToBookTonight(this.name);
     }
-    return this.todaysBookings
+    return this.todaysBookings;
   }
 
   calculateRoomServiceTotal() {
     if (this.orders.length === 0) {
-      // domUpdates.displayNoOrderCostForCustomer(this.name);
+      domUpdates.displayNoOrderCostForCustomer(this.name);
     } else {
       this.allTimeTotalRoomServiceCharges = this.orders.reduce((total, order) => {
-        total = total + order.totalCost
-        console.log(total)
-        return total
+        total = total + order.totalCost;
+        return total;
       }, 0)
-    }
-      console.log(this.allTimeTotalRoomServiceCharges)
+      this.allTimeTotalRoomServiceCharges = this.allTimeTotalRoomServiceCharges.toFixed(2);
       domUpdates.displayAllTimeOrderCostForCustomer(this.allTimeTotalRoomServiceCharges);
+    }
   }
 
   calculateRoomServiceToday() {
-    this.todaysOrder = this.orders.find(order => this.unformattedDate === order.date)
-    if(this.todaysOrder === undefined){
+    this.todaysOrder = this.orders.find(order => this.unformattedDate === order.date);
+    if(this.todaysOrder === undefined) {
       domUpdates.displayNoOrderCostToday(this.name)
     } else {
-    domUpdates.displayOrdersTodayTotalCost(this.todaysOrder.totalCost)
+    domUpdates.displayOrdersTodayTotalCost(this.todaysOrder.totalCost);
     }
   }
 

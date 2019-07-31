@@ -1,14 +1,15 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
 $color-primary: #37384E;
 $color-secondary: #623842;
+$font-main: Montserrat, sans-serif;
+$color-tertiary: lightgrey;
 
 * {
   box-sizing: border-box;
-  font-family: Montserrat, sans-serif;
+  font-family: $font-main;
   font-weight: 300;
 }
 
-body{
+body {
   display: grid;
   grid-template-areas: 
     "header header header"
@@ -20,14 +21,13 @@ body{
   width: 100%;
 }
 
-
 h1 {
-  font-family: Montserrat;
+  color: $color-tertiary;
   display: inline-block;
-  margin: 20px 0px 40px 35px;
+  font-family: $font-main;
   font-size: 67px;
-  color: lightgrey;
   font-weight: 400;
+  margin: 20px 0px 40px 35px;
 }
 
 .logo-thin {
@@ -35,25 +35,24 @@ h1 {
 }
 
 .emphasis {
-font-weight: 700;
+  font-weight: 700;
 }
 
 ul, 
 li {
   display: inline-block;
-    float: right;
-
+  float: right;
 }
-ul{
-  margin: 40px 50px 50px 0px;
-  color: lightgrey;
+
+ul {
+  color: $color-tertiary;
   font-size: 22px;
+  margin: 40px 50px 50px 0px;
 }
 
-li{
+li {
   margin: 10px 10px 10px 10px;
 }
-
 
 header {
   background-color: $color-primary;
@@ -61,20 +60,20 @@ header {
   height: 170px;
 }
 
-aside{
+aside {
   background-color: $color-secondary;
-  grid-area: aside;
-  color: lightgrey;
-  text-align: center;
-  margin-top: 0px;
+  color: $color-tertiary;
   float: left;
-  min-width: 300px;
+  grid-area: aside;
   height: 100%;;
+  margin-top: 0px;
+  min-width: 300px;
+  text-align: center;
 }
 
 .aside__button {
+  background-color: $color-tertiary;
   filter: invert(.27);
-  background-color: lightgrey;
   max-height: 40px;
   padding: 5px;
 }
@@ -84,14 +83,13 @@ aside{
 }
 
 .aside__button-add {
-    padding: 9px 0px 9px 0px;
+  padding: 9px 0px 9px 0px;
 }
 
 .bignum {
   font-size: 70px;
   margin: 0px 0px 0px 0px;
 }
-
 
 .aside__input-container {
   display: flex;  
@@ -100,33 +98,33 @@ aside{
 
 input {
   height: 40px;
-  width: 70%;
   margin: 0px 0px 0px 0px;
+  width: 70%;
 }
 
 ::placeholder {
   font-size: 14px;
-  padding: 10px;}
+  padding: 10px;
+}
 
 main {
-  grid-area: main;
   background-color: blanchedalmond;
   color: #37384E;
+  grid-area: main;
   height: 100%;
-  position: relative;
   overflow:auto; 
+  position: relative;
 }
 
 .main__section {
-  text-align: center;
   font-size: 16px;
+  text-align: center;
 }
-
 
 h5 {
   font-size: 28px;
-  margin: 25px 0px 0px 0px;
   font-weight: 700;
+  margin: 25px 0px 0px 0px;
   padding: 0px;
   text-align: center;
 }
@@ -146,11 +144,7 @@ h6 {
   justify-content: center;
 }
 
-#main__section-booking {
- background-color: green 
-}
-
-.main__date-search{
+.main__date-search {
   width: 140px;
 }
 
@@ -158,7 +152,7 @@ fieldset {
   margin: 15px 15px 15px 15px
 }
 
-.checkbox{
+.checkbox {
   width: 30px
 }
 
@@ -167,8 +161,8 @@ table, th, td {
 }
 
 .main__button {
+  background-color: $color-tertiary;
   filter: invert(.27);
-  background-color: lightgrey;
   max-height: 40px;
   padding: 5px;
 }
@@ -177,20 +171,21 @@ table, th, td {
   min-width: 40px;
 }
 
-.main__input{
+.main__input {
   background-color: white;
   font-size: 20px;
 }
 
 .main__customer-selected {
   border: 2px solid black;
+  display: inline-block;
   max-width: 75%;
 }
 
 .main__customer-rooms-selected-booking {
   border: 2px solid black;
-  min-width: 70%;
   display: inline-block;
+  min-width: 70%;
 }
 
 .order-card,
@@ -205,22 +200,22 @@ table, th, td {
 
 footer {
   background-color: #849974;
-  width:100%;
+  bottom: 0;
   height: 100px;
-  position:absolute;
-  bottom:0;
+  position: absolute;
+  width:100%;
 }
 
 .footer__prompt-main-message {
-  margin: 13px 0px 0px 0px;
   font-size: 20px;
+  margin: 13px 0px 0px 0px;
   text-align: center;
 }
 
-.footer__prompt-clickable{
+.footer__prompt-clickable {
   margin: 5px 5px 5px 5px;
 }
 
 .footer__prompt-clickable:hover {
-  color: lightgrey;
+  color: $color-tertiary;
 }

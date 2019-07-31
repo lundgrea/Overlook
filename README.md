@@ -27,7 +27,13 @@ The test results will output to the terminal.
 
 
 ### ScreenShots HTML
-![](src/images/xxx.png)
+![](src/images/homepage.png)
+![](src/images/homepage-customerseleted.png)
+![](src/images/orderspage.png)
+![](src/images/roomspage.png)
+![](src/images/roomspage2.png)
+![](src/images/booknowpropmt.png)
+
 
 ### Icon Credits
 

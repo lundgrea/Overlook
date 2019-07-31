@@ -28,17 +28,14 @@
         <img class="aside__input aside__button" id="aside__button-search" src="https://image.flaticon.com/icons/svg/49/49116.svg" alt="Customer Search Button" height="40px" width="40px">
         <input class="aside__input aside__input-search" id="aside__input-search" type="text" placeholder="Customer Search">
       </div>
-       <div class="aside__input-container" id="aside__input-container-add">
+      <div class="aside__input-container" id="aside__input-container-add">
         <img class="aside__input aside__button" id="aside__button-add" src="https://image.flaticon.com/icons/svg/70/70421.svg" alt="Add Customer Button" height="40px" width="40px">
         <input class="aside__input aside__input-add" id="aside__input-add" type="text" placeholder="Add New Customer">
       </div>
     </aside>
-
-
-
     <main class="page">
       <section class="main__section" id="main__section-home">
-      <h5>home</h5>
+        <h5>home</h5>
         <article class="display-revenue">
           <h3 class="main main__bignum bignum" id="main__bignum-revenue">$<span id="main__bignums-revenue-span"></span></h3>
           <h4 class="main main__bignum-description" id="main__bignum-number-description">revenue</h4>
@@ -57,9 +54,6 @@
           <h2 class="main__customer-selected-name" id="main__customer-home-selected-name"></h2>
         </article>
       </section>
-
-
-
       <section class="main__section" id="main__section-orders">
         <h5>orders for today</h5>
         <article class="main__section-orders" id="main__section-orders-today">
@@ -67,15 +61,15 @@
         <fieldset>
           <label>Search Order By Date</label>
           <div class="main__input-container" id=" main__input-container-search-orders">
-              <img class="main__orders-search main__input   main__button" id="main__button-search-orders"  src="https://image.flaticon.com/icons/svg/1182/1182010.svg" alt="Orders Search  Button" height="40px" width="40px">
-              <input class="main__orders-search main__input main__input-search  main__date-search" id="main__input-search-orders" type="text"  placeholder="yyyy/mm/dd">
-              </input>
-              <section class="main__orders-search-results"></section>
+            <img class="main__orders-search main__input   main__button" id="main__button-search-orders"  src="https://image.flaticon.com/icons/svg/1182/1182010.svg" alt="Orders Search  Button" height="40px" width="40px">
+            <input class="main__orders-search main__input main__input-search  main__date-search" id="main__input-search-orders" type="text"  placeholder="yyyy/mm/dd">
+            </input>
+            <section class="main__orders-search-results"></section>
           </div>
         </fieldset>
         <article class="main__customer-unselected" id="main__customer-orders-unselected">
           <p id="orders__prompt-enter-customer">Search for Current Customer or Add New Customer Within SideBar</p>
-           <h2 class="main__prompt-no-user-by-name" id="orders__prompt-no-user-by-name"></h2>
+          <h2 class="main__prompt-no-user-by-name" id="orders__prompt-no-user-by-name"></h2>
         </article>
         <article class="main__customer-selected" id="main__customers-orders-selected">
           <h2 class="main__customer-selected-name" id="main__customer-orders-selected-name"></h2>
@@ -85,9 +79,6 @@
           </section>
         </article>
       </section>
-
-
-
       <section class="main__section" id="main__section-rooms">
         <h5>rooms</h5>
         <article class="display-record">
@@ -109,8 +100,8 @@
           </div>
         </fieldset>
         <article class="main__customer-unselected" id="main__customer-rooms-unselected">
-        <p id="rooms__prompt-enter-customer">Search for Current Customer or Add New Customer Within SideBar</p>
-         <h2 class="main__prompt-no-user-by-name" id="rooms__prompt-no-user-by-name"></h2>
+          <p id="rooms__prompt-enter-customer">Search for Current Customer or Add New Customer Within SideBar</p>
+          <h2 class="main__prompt-no-user-by-name" id="rooms__prompt-no-user-by-name"></h2>
         </article>
         <article class="main__customer-selected" id="main__customer-rooms-selected">
           <h2 class="main__customer-selected-name" id="main__customer-rooms-selected-name"></h2>
@@ -118,24 +109,18 @@
           </section>
         </article>        
       </section>
-
-
-
       <section class="main__section" id="main__section-customers">
         <h5>customers</h5>
         <article class="main__customer-unselected" id="main__customer-customers-unselected">
           <p id="customer__prompt-enter-customer">Search for Current Customer or Add New Customer Within SideBar</p>
-           <h2 class="main__prompt-no-user-by-name" id="customers__prompt-no-user-by-name"></h2>
+          <h2 class="main__prompt-no-user-by-name" id="customers__prompt-no-user-by-name"></h2>
         </article>
         <article class="main__customer-selected" id="main__customer-customers-selected">
           <h2 class="main__customer-selected-name" id="main__customer-customers-selected-name"></h2>
         </article>
       </section>
-
-
       <section class="main__section" id="main__section-booking">
         <h5>available rooms</h5>
-
         <fieldset>
           <form>
             <h2>Select Room Type</h2>
@@ -157,31 +142,8 @@
             </div>
           </form>
         </fieldset>
-        <article class="main__rooms-tonight-search-results">
-        </article>
- <!--        <table style="width:100%">
-          <tr class="main__rooms-chart" id="main__rooms-chart-labels">
-            <th>Room Number</th>
-            <th>Room Type</th> 
-            <th>Number of Beds</th>
-            <th>Bed Size</th>
-            <th>Cost Per Night</th>
-            <th>Bidet</th>
-            <th>Available</th>
-          </tr>
-          <tr class="main__rooms-chart" id="main__rooms-chart-data">
-            <td class="main__rooms-chart-line" id="main__rooms-chart-room-number"></td>
-            <td class="main__rooms-chart-line" id="main__rooms-chart-room-type"></td> 
-            <td class="main__rooms-chart-line" id="main__rooms-chart-room-num-beds"></td>
-            <td class="main__rooms-chart-line" id="main__rooms-chart-room-bed-size"></td>
-            <td class="main__rooms-chart-line" id="main__rooms-chart-room-cost"></td>
-            <td class="main__rooms-chart-line" id="main__rooms-chart-room-bidet"></td>
-            <td class="main__rooms-chart-line" id="main__rooms-chart-room-availability"></td>
-          </tr>
-        </table> -->
+        <article class="main__rooms-tonight-search-results"></article>
       </section>
-
-      
     </main>
     <footer class="footer__prompt">
       <h6 class="footer__prompt-main-message" id="footer__prompt-book-tonight">The current customer does not have a room booked yet for tonight.</h6>
