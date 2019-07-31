@@ -21,7 +21,6 @@ body {
   width: 100%;
 }
 
-
 h1 {
   font-family: $font-main;
   display: inline-block;
@@ -51,10 +50,9 @@ ul {
   font-size: 22px;
 }
 
-li{
+li {
   margin: 10px 10px 10px 10px;
 }
-
 
 header {
   background-color: $color-primary;
@@ -62,7 +60,7 @@ header {
   height: 170px;
 }
 
-aside{
+aside {
   background-color: $color-secondary;
   grid-area: aside;
   color: $color-tertiary;
@@ -93,7 +91,6 @@ aside{
   margin: 0px 0px 0px 0px;
 }
 
-
 .aside__input-container {
   display: flex;  
   margin: 0px 0px 20px 40px;
@@ -107,7 +104,8 @@ input {
 
 ::placeholder {
   font-size: 14px;
-  padding: 10px;}
+  padding: 10px;
+}
 
 main {
   grid-area: main;
@@ -122,7 +120,6 @@ main {
   text-align: center;
   font-size: 16px;
 }
-
 
 h5 {
   font-size: 28px;
@@ -148,10 +145,10 @@ h6 {
 }
 
 #main__section-booking {
- background-color: green 
+  background-color: green 
 }
 
-.main__date-search{
+.main__date-search {
   width: 140px;
 }
 
@@ -159,7 +156,7 @@ fieldset {
   margin: 15px 15px 15px 15px
 }
 
-.checkbox{
+.checkbox {
   width: 30px
 }
 
@@ -178,7 +175,7 @@ table, th, td {
   min-width: 40px;
 }
 
-.main__input{
+.main__input {
   background-color: white;
   font-size: 20px;
 }
@@ -218,7 +215,7 @@ footer {
   text-align: center;
 }
 
-.footer__prompt-clickable{
+.footer__prompt-clickable {
   margin: 5px 5px 5px 5px;
 }
 
