@@ -90,6 +90,10 @@ $(document).ready(() => {
     hotel.displayDatedRoomAvailability(searchResult);
   });
 
+  $('#main__prompt-book-x-out').click(()=> {
+    domUpdates.footerHide()
+  });
+
   $('#residential-suite').click((e) => {
     e.preventDefault;
     if ($('#residential-suite').prop("checked") == true) {
