@@ -10,6 +10,12 @@ import testBookings from '../src/bookings-test-data';
 
 let hotel;
 
+chai.use(spies);
+
+chai.spy.on(domUpdates, ['pageLoadHandler', 'displayRoomsAvailable', 'orderButtonHandler', 'roomButtonHandler', 'customerButtonHandler', 'homeButtonHandler', 'bookNowButtonHandler', 'displayDate' , 'formatDate', 'clearFields', 'displayCustomerInfo', 'displayNoBookingsMessage', 'displayCustomerBookings', 'displayNoOrderMessage', 'displayCustomerOrders', 'displayPromptToBookTonight', 'displayNoUserByNamePrompt', 'resetFields', 'displayNoUserByIDPrompt', 'displayOrdersToday', 'displayOrdersTodayTotalCost', 'displayNoOrderCostToday', 'displayAllTimeOrderCostForCustomer', 'displayNoOrderCostForCustomer', 'displayNoOrdersForSelectedDate', 'displayDateSearchedOrders', 'displayNoBookingsForSelectedDate', 'displayDateSearchedBookings', 'displayRoomsAvailable', 'displayTodaysAvailableRooms', ], () => {});
+
+
+
 let info = 
   {
   'users': testUsers.users, 
