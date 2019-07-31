@@ -138,7 +138,6 @@ class Hotel {
     this.currentCustomer = new Customer({id: randomNumber, name: nameInput}, this.allBookings, this.allRoomServiceOrders)
     this.currentCustomer.customerHandler();
     domUpdates.displayCustomerInfo(this.currentCustomer);
-    console.log(this.currentCustomer)
   }
 
   unformatDate(date) {
@@ -158,14 +157,12 @@ class Hotel {
     if (this.todaysOrders.length === 0) {
       //   add error handling    //
     } else {
-      console.log(this.todaysOrders)
       this.todaysOrders.map(order => domUpdates.displayOrdersToday(order))
     }
   }
 
   searchRoomServiceOrdersByDate(date) {
     let daysOrders = this.allRoomServiceOrders.filter(order => order.date === date)
-    console.log(daysOrders)
     if(daysOrders.length === 0) {
       domUpdates.displayNoOrdersForSelectedDate(date)
     } else {      
@@ -233,7 +230,6 @@ class Hotel {
   createNewRoomServiceOrder() {
   }
  
-
 
 
 

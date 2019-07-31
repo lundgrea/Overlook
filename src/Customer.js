@@ -60,7 +60,6 @@ class Customer {
   displayBookings() {
     if(this.bookings.length === 0) {
       domUpdates.displayNoBookingsMessage(this.name)
-      //   console.log(TEST THIS WITH NEW USER)    //
     } else {
       this.bookings.map(booking => domUpdates.displayCustomerBookings(booking))
     }
@@ -78,9 +77,7 @@ class Customer {
     this.todaysBooking = this.bookings.filter(booking => {
       return booking.date == this.unformattedDate
     })
-    console.log(this.todaysBooking)
     if (this.todaysBooking.length === 0) {
-      console.log('no bookings for today');
       domUpdates.displayPromptToBookTonight(this.name);
     }
     return this.todaysBookings
@@ -88,15 +85,13 @@ class Customer {
 
   calculateRoomServiceTotal() {
     if (this.orders.length === 0) {
-      // domUpdates.displayNoOrderCostForCustomer(this.name);
+      domUpdates.displayNoOrderCostForCustomer(this.name);
     } else {
       this.allTimeTotalRoomServiceCharges = this.orders.reduce((total, order) => {
         total = total + order.totalCost
-        console.log(total)
         return total
       }, 0)
     }
-      console.log(this.allTimeTotalRoomServiceCharges)
       domUpdates.displayAllTimeOrderCostForCustomer(this.allTimeTotalRoomServiceCharges);
   }
 

@@ -4,13 +4,6 @@ import './css/base.scss';
 import Hotel from './Hotel';
 import domUpdates from './domUpdates.js';
 
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
-
-
-// const hotel;
-
 let hotel
 
 let usersFetch = fetch("https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users").then(response => response.json());
@@ -84,7 +77,6 @@ $(document).ready(() => {
   });
 
   $('#main__button-search-orders').click((e) => {
-    console.log('heard the click within the orders')
     e.preventDefault;
     let searchResult = $('#main__input-search-orders').val()
     hotel.searchRoomServiceOrdersByDate(searchResult)

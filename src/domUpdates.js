@@ -21,7 +21,6 @@ let domUpdates = {
   },
 
   orderButtonHandler() {
-    console.log('order click');
     $('#main__section-home').hide();
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
@@ -30,7 +29,6 @@ let domUpdates = {
   },
 
   roomButtonHandler() {
-    console.log('rooms click');
     $('#main__section-home').hide();
     $('#main__section-orders').hide();
     $('#main__section-customers').hide();
@@ -39,7 +37,6 @@ let domUpdates = {
   },
 
   customerButtonHandler() {
-    console.log('customers click');
     $('#main__section-home').hide();
     $('#main__section-orders').hide();
     $('#main__section-rooms').hide();
@@ -48,7 +45,6 @@ let domUpdates = {
   },
 
   homeButtonHandler() {
-    console.log('home click')
     $('#main__section-orders').hide();
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
