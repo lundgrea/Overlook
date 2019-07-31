@@ -244,6 +244,7 @@ let domUpdates = {
             <td class="main__rooms-chart-line" id="main__rooms-chart-room-cost">${room.costPerNight}</td>
             <td class="main__rooms-chart-line" id="main__rooms-chart-room-bidet">${room.bidet}</td>
             <td class="main__rooms-chart-line" id="main__rooms-chart-room-availability">Yes</td>
+            <td class="main__rooms-chart-line" id="main__rooms-chart-room-availability"><input class="checkbox" type="checkbox" name="available" value="available" class="input__booking-checkmark" </input> </td>
           </tr>
         </table>`)
     })
