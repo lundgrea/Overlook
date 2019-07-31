@@ -1,14 +1,15 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
 $color-primary: #37384E;
 $color-secondary: #623842;
+$font-main: Montserrat, sans-serif;
+$color-tertiary: lightgrey;
 
 * {
   box-sizing: border-box;
-  font-family: Montserrat, sans-serif;
+  font-family: $font-main;
   font-weight: 300;
 }
 
-body{
+body {
   display: grid;
   grid-template-areas: 
     "header header header"
@@ -22,11 +23,11 @@ body{
 
 
 h1 {
-  font-family: Montserrat;
+  font-family: $font-main;
   display: inline-block;
   margin: 20px 0px 40px 35px;
   font-size: 67px;
-  color: lightgrey;
+  color: $color-tertiary;
   font-weight: 400;
 }
 
@@ -35,18 +36,18 @@ h1 {
 }
 
 .emphasis {
-font-weight: 700;
+  font-weight: 700;
 }
 
 ul, 
 li {
   display: inline-block;
-    float: right;
-
+  float: right;
 }
-ul{
+
+ul {
   margin: 40px 50px 50px 0px;
-  color: lightgrey;
+  color: $color-tertiary;
   font-size: 22px;
 }
 
@@ -64,7 +65,7 @@ header {
 aside{
   background-color: $color-secondary;
   grid-area: aside;
-  color: lightgrey;
+  color: $color-tertiary;
   text-align: center;
   margin-top: 0px;
   float: left;
@@ -74,7 +75,7 @@ aside{
 
 .aside__button {
   filter: invert(.27);
-  background-color: lightgrey;
+  background-color: $color-tertiary;
   max-height: 40px;
   padding: 5px;
 }
@@ -168,7 +169,7 @@ table, th, td {
 
 .main__button {
   filter: invert(.27);
-  background-color: lightgrey;
+  background-color: $color-tertiary;
   max-height: 40px;
   padding: 5px;
 }
@@ -222,5 +223,5 @@ footer {
 }
 
 .footer__prompt-clickable:hover {
-  color: lightgrey;
+  color: $color-tertiary;
 }
