@@ -20,6 +20,10 @@ let domUpdates = {
     $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
   },
 
+  footerHide() {
+    $('.footer__prompt').hide();
+  },
+
   orderButtonHandler() {
     $('#main__section-home').hide();
     $('#main__section-rooms').hide();
