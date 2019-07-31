@@ -32,7 +32,7 @@ The test results will output to the terminal.
 ![](src/images/orderspage.png)
 ![](src/images/roomspage.png)
 ![](src/images/roomspage2.png)
-![](src/images/booknowpropmt.png)
+![](src/images/booknowprompt.png)
 
 
 ### Icon Credits

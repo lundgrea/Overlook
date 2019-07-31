@@ -34,7 +34,7 @@ describe('Hotel', function() {
 
   it('should be able to figure out the date', function() {
     hotel.getToday();
-    expect(hotel.date).to.equal('7/29/2019');
+    expect(hotel.date).to.equal('7/31/2019');
   });
 
   it('should manage all hotel guests', function() {
