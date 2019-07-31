@@ -149,7 +149,7 @@ let domUpdates = {
   }, 
 
    displayNoOrderCostForCustomer(name) {
-    $('$main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`)
+    $('#main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`)    
   }, 
 
   displayNoOrdersForSelectedDate(date) {

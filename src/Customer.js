@@ -91,8 +91,8 @@ class Customer {
         total = total + order.totalCost
         return total
       }, 0)
-    }
       domUpdates.displayAllTimeOrderCostForCustomer(this.allTimeTotalRoomServiceCharges);
+    }
   }
 
   calculateRoomServiceToday() {
