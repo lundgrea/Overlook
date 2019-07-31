@@ -93,27 +93,52 @@ $(document).ready(() => {
   $('#main__button-search-rooms').click((e) => {
     e.preventDefault;
     let searchResult = $('#main__input-search-room').val();
-    console.log(searchResult);
     hotel.displayDatedRoomAvailability(searchResult);
   });
 
   $('#residential-suite').click((e) => {
     e.preventDefault;
-    hotel.filterAvailableRoomByType("residential suite") 
+    if ($('#residential-suite').prop("checked") == true) {
+      $('.main__rooms-tonight-search-results').empty()
+      hotel.filterAvailableRoomByType("residential suite") 
+    } else {
+      $('.main__rooms-tonight-search-results').empty()
+      hotel.displayTodaysRoomAvailability()
+    }
   })
 
   $('#suite').click((e) => { 
     e.preventDefault;
-
+    if($('#suite').prop("checked") == true) {
+      $('.main__rooms-tonight-search-results').empty()
+      hotel.filterAvailableRoomByType("suite")  
+    } else {
+      $('.main__rooms-tonight-search-results').empty()
+      hotel.displayTodaysRoomAvailability()
+    }
   })
 
   $('#junior-suite').click((e) => { 
     e.preventDefault;
+    if($('#junior-suite').prop("checked") == true) {
+      $('.main__rooms-tonight-search-results').empty()
+      hotel.filterAvailableRoomByType("junior suite") 
+    } else {
+      $('.main__rooms-tonight-search-results').empty()
+      hotel.displayTodaysRoomAvailability()
+    }
   });
+
+
   $('#single-room').click((e) => { 
     e.preventDefault;
+    if($('#single-room').prop("checked") === true){
+      $('.main__rooms-tonight-search-results').empty()
+      hotel.filterAvailableRoomByType("single room") 
+    } else {
+      $('.main__rooms-tonight-search-results').empty()
+      hotel.displayTodaysRoomAvailability()
+    }
   })
-
-console.log('This is the JavaScript entry file - your code begins here.');
 
 })
