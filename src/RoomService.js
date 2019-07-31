@@ -10,9 +10,7 @@ class RoomService {
     this.date = date;
     this.food = food || [];
     this.total = total;
-  }
-
-  
+  } 
 }
 
 

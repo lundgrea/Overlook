@@ -16,7 +16,7 @@ let domUpdates = {
     $('.page').delay(2500).fadeIn("slow");
   },
 
-  displayRoomsAvailable(){
+  displayRoomsAvailable() {
     $('#aside__bignum-number').text(hotel.todaysAvailableRoomCount);
   },
 
@@ -32,7 +32,7 @@ let domUpdates = {
     $('#main__section-home').hide();
     $('#main__section-orders').hide();
     $('#main__section-customers').hide();
-    $('#main__section-booking').hide()
+    $('#main__section-booking').hide();
     $('#main__section-rooms').show();
   },
 
@@ -67,7 +67,7 @@ let domUpdates = {
   },
 
   formatDate(date) {
-    let dateArray = date.split('/')
+    let dateArray = date.split('/');
     let day = dateArray[2];
     let month = dateArray[1];
     let year = dateArray[0];
@@ -85,18 +85,18 @@ let domUpdates = {
   },
 
   displayCustomerInfo(customer) {
-    $('.main__customer-unselected').hide()
-    $('.main__customer-selected').show()
+    $('.main__customer-unselected').hide();
+    $('.main__customer-selected').show();
     $('.main__customer-selected-name').text(customer.name);
   },
 
   displayNoBookingsMessage(customerName) {
     $('#main__customer-rooms-selected-booking').append(
-    `<h5>No current or past bookings for ${customerName}</h5>`)
+    `<h5>No current or past bookings for ${customerName}</h5>`);
   },
 
   displayCustomerBookings(booking) {
-    let betterDate = domUpdates.formatDate(booking.date)
+    let betterDate = domUpdates.formatDate(booking.date);
     $('#main__customer-rooms-selected-booking').append(
       `<article class="booking-card">
       <h4 class="main__customer-rooms-selected-booking-info main__customer-rooms-selected-booking-date">Booking Date: ${betterDate}</h4>
@@ -107,7 +107,7 @@ let domUpdates = {
 
   displayNoOrderMessage(customerName) {
      $('#main__customer-orders-selected-orders').append(
-      `<h5>No food service orders for ${customerName}</h5>`)
+      `<h5>No food service orders for ${customerName}</h5>`);
   },
 
   displayCustomerOrders(order) {
@@ -126,7 +126,7 @@ let domUpdates = {
   },
 
   displayNoUserByNamePrompt(enteredName) {
-    $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredName} within the database. Please search by another name.`)
+    $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredName} within the database. Please search by another name.`);
   },
 
   resetField() {
@@ -134,7 +134,7 @@ let domUpdates = {
   },
 
   displayNoUserByIDPrompt(enteredID) {
-     $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredID} within the database. Please search by another ID.`)
+     $('.main__prompt-no-user-by-name').text(`No valid user by the name ${enteredID} within the database. Please search by another ID.`);
   },
 
   displayOrdersToday(order) {
@@ -142,61 +142,61 @@ let domUpdates = {
       `<article class="order-card">
           <h4 class="main__orders-general-info" id="main__orders-general-info-item">Item: ${order.food}</h4>
           <h4 class="main__orders-general-info"  id="main__orders-general-info-total">Total: $${order.totalCost}</h4>
-        </article>`)
+        </article>`);
   }, 
 
   displayOrdersTodayTotalCost(cost) {
-    $('#main__customer-selected-order-total-today').text(`Today's Order Total: $${cost}`)
+    $('#main__customer-selected-order-total-today').text(`Today's Order Total: $${cost}`);
   },
 
   displayNoOrderCostToday(name) {
-    $('#main__customer-selected-order-total-today').text(`Order Total For Today: $0`)
+    $('#main__customer-selected-order-total-today').text(`Order Total For Today: $0`);
   },
 
   displayAllTimeOrderCostForCustomer(cost) {
-    $('#main__customer-selected-order-total-all-time').text(`All Time Order Total: $${cost}`)
+    $('#main__customer-selected-order-total-all-time').text(`All Time Order Total: $${cost}`);
   }, 
 
    displayNoOrderCostForCustomer(name) {
-    $('#main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`)    
+    $('#main__customer-selected-order-total-all-time').text(`Order Total For All Time: $0`);
   }, 
 
   displayNoOrdersForSelectedDate(date) {
     let betterDate = domUpdates.formatDate(date);
-    $('.main__orders-search-results').text('')
-    $('#main__input-search-orders').val('')
+    $('.main__orders-search-results').text('');
+    $('#main__input-search-orders').val('');
     $('.main__orders-search-results').append(`
         <h5>Search Results</h5>
-        <h4>No Room Service Orders for ${betterDate}</h4>`)
+        <h4>No Room Service Orders for ${betterDate}</h4>`);
   },
 
   displayDateSearchedOrders(orders) {
-    $('.main__orders-search-results').text('')
-    $('#main__input-search-orders').val('')
-    $('.main__orders-search-results').append(`<h5 class="main__orders-search-headline">Search Results</h5>`)
+    $('.main__orders-search-results').text('');
+    $('#main__input-search-orders').val('');
+    $('.main__orders-search-results').append(`<h5 class="main__orders-search-headline">Search Results</h5>`);
     orders.map(order =>{
     $('.main__orders-search-headline').after(
       `<article class="order-card">
           <h4 class="main__order-searched-order-info">Order Date: ${order.date}</h4>
           <h4 class="main__order-searched-order-info">Item Ordered: ${order.food}</h4>
           <h4 class="main__order-searched-order-info">Order Total: $${order.totalCost}</h4>
-        </article>`)
+        </article>`);
     })
   },
 
   displayNoBookingsForSelectedDate(date) {
     let betterDate = domUpdates.formatDate(date);
-    $('.main__rooms-search-results').text('')
+    $('.main__rooms-search-results').text('');
     $('#main__input-search-room').val('');
     $('.main__rooms-search-results').append(`<h5>Search Results</h5>
-        <h4>No Bookings for ${betterDate}</h4>`)
+        <h4>No Bookings for ${betterDate}</h4>`);
   },
 
   displayDateSearchedBookings(bookings) {
-    $('.main__rooms-search-results').text('')
+    $('.main__rooms-search-results').text('');
     $('#main__input-search-room').val('');
     $('.main__rooms-search-result').append(`
-    <h5 class="main__rooms-search-headline">Search Results</h5>`)
+    <h5 class="main__rooms-search-headline">Search Results</h5>`);
     bookings.map(booking =>
     $('.main__rooms-search-headline').after(`
       <article class="booking-card">
