@@ -91,6 +91,7 @@ class Customer {
         total = total + order.totalCost
         return total
       }, 0)
+      this.allTimeTotalRoomServiceCharges = this.allTimeTotalRoomServiceCharges.toFixed(2)
       domUpdates.displayAllTimeOrderCostForCustomer(this.allTimeTotalRoomServiceCharges);
     }
   }

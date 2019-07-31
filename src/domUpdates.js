@@ -76,11 +76,12 @@ let domUpdates = {
   },
 
   clearFields() {
-    $('#main__customer-rooms-selected-booking').empty()
-    $('#main__customer-orders-selected-orders').empty()
-    $('.main__section-orders').empty()
-    $('#main__customer-selected-order-total-today').empty()
-    $('#main__customer-selected-order-total-all-time').empty()
+    $('#main__customer-rooms-selected-booking').empty();
+    $('#main__customer-orders-selected-orders').empty();
+    $('.main__section-orders').empty();
+    $('#main__customer-selected-order-total-today').empty();
+    $('#main__customer-selected-order-total-all-time').empty();
+    $('.footer__prompt').hide();
   },
 
   displayCustomerInfo(customer) {

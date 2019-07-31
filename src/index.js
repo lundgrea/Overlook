@@ -64,6 +64,7 @@ $(document).ready(() => {
 
   $('#aside__button-search').click((e) => {
     e.preventDefault();
+    domUpdates.clearFields()
     let searchResult = $('#aside__input-search').val()
     hotel.findCustomerByName(searchResult);
     domUpdates.resetField()
