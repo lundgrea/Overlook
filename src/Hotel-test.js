@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 import Hotel from '../src/Hotel';
 import Customer from '../src/Customer';
+import spies from 'chai-spies';
 import testUsers from '../src/users-test-data';
 import testRooms from '../src/rooms-test-data';
 import testRoomServices from '../src/roomServices-test-data';
@@ -161,5 +162,11 @@ describe('Hotel', function() {
     hotel.generateNewCustomer('Alyssa Lundgren');
     expect(hotel.currentCustomer.name).to.equal('Alyssa Lundgren');
    });
+
+  it("should display information to the page", function() {
+    hotel.displayDatedRoomAvailability()
+    expect(domUpdates.displayTodaysAvailableRooms).to.have.been.called(1);
+  });
+
 
 });
