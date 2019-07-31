@@ -75,6 +75,14 @@ let domUpdates = {
     return reformattedDate;
   },
 
+  clearFields() {
+    $('#main__customer-rooms-selected-booking').empty()
+    $('#main__customer-orders-selected-orders').empty()
+    $('.main__section-orders').empty()
+    $('#main__customer-selected-order-total-today').empty()
+    $('#main__customer-selected-order-total-all-time').empty()
+  },
+
   displayCustomerInfo(customer) {
     $('.main__customer-unselected').hide()
     $('.main__customer-selected').show()

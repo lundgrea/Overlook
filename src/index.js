@@ -71,6 +71,7 @@ $(document).ready(() => {
 
   $('#aside__button-add').click((e) => {
     e.preventDefault();
+    domUpdates.clearFields()
     let newUserName = $('#aside__input-add').val()
     hotel.generateNewCustomer(newUserName)
     domUpdates.resetField()
