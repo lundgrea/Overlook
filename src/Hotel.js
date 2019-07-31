@@ -20,6 +20,7 @@ class Hotel {
     this.currentCustomer = {};
     this.todaysBookings = [];
     this.todaysAvailableRoomCount = null;
+    this.todaysAvailableRooms = null;
     this.todaysPercentageOccupied = null;
     this.todaysOrders = null
     this.todaysTotalOrderRevenue = null;
@@ -40,6 +41,7 @@ class Hotel {
     this.findBestDay();
     this.findWorstDay();
     this.populateTodaysOrders();
+    this.findRoomsNotBookedToday();
   }
 
   getToday() {
@@ -194,8 +196,34 @@ class Hotel {
       return this.allRooms.filter(room => room.number === number)
     })
     let availableRooms = availableRoomsNested.flat()
-    console.log(availableRooms)
-    domUpdates.displayRoomsAvailable(availableRooms)
+    return availableRooms
+  }
+
+  findRoomsNotBookedToday() {
+    let todaysBookings = this.allBookings.filter(booking => booking.date === this.unformattedDate)
+    let todaysBookedRooms = todaysBookings.map(booking => booking.roomNumber)
+    let allRoomNumbers = this.allRooms.map(room => room.number)
+    let todaysAvailableRoomNumbers = allRoomNumbers.filter(room => {
+      return todaysBookedRooms.indexOf(room) < 0
+      }) 
+    let availableRoomsNested = todaysAvailableRoomNumbers.map(number => {
+      return this.allRooms.filter(room => room.number === number)
+    })
+    this.todaysAvailableRooms = availableRoomsNested.flat()
+    return this.todaysAvailableRooms
+  }
+
+  displayDatedRoomAvailability(date) {
+    domUpdates.displayRoomsAvailable(this.findRoomsNotBookedByDate(date))
+  }
+
+  displayTodaysRoomAvailability() {
+    domUpdates.displayTodaysAvailableRooms(this.findRoomsNotBookedToday())
+  }
+
+  filterAvailableRoomByType(type) {
+    let selectedRooms = this.todaysAvailableRooms.filter(room => room.roomType === type) 
+    domUpdates.displayTodaysAvailableRooms(selectedRooms) 
   }
 
 
