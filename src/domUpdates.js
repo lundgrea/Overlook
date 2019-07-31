@@ -24,7 +24,7 @@ let domUpdates = {
     $('#main__section-home').hide();
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
-    $('#main__section-booking').hide()
+    $('#main__section-booking').hide();
     $('#main__section-orders').show();
   },
 
@@ -40,7 +40,7 @@ let domUpdates = {
     $('#main__section-home').hide();
     $('#main__section-orders').hide();
     $('#main__section-rooms').hide();
-    $('#main__section-booking').hide()
+    $('#main__section-booking').hide();
     $('#main__section-customers').show();
   },
 
@@ -48,7 +48,7 @@ let domUpdates = {
     $('#main__section-orders').hide();
     $('#main__section-rooms').hide();
     $('#main__section-customers').hide();
-    $('#main__section-booking').hide()
+    $('#main__section-booking').hide();
     $('#main__section-home').show();
   },
 

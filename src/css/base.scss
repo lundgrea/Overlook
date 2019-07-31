@@ -144,10 +144,6 @@ h6 {
   justify-content: center;
 }
 
-#main__section-booking {
-  background-color: green 
-}
-
 .main__date-search {
   width: 140px;
 }
@@ -183,6 +179,7 @@ table, th, td {
 .main__customer-selected {
   border: 2px solid black;
   max-width: 75%;
+  display: inline-block;
 }
 
 .main__customer-rooms-selected-booking {
