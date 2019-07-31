@@ -108,7 +108,7 @@ class Hotel {
       return total
     }, 0)
     this.todaysTotalRevenue = Number(roomRentalIncome) + Number(this.todaysTotalOrderRevenue);
-    this.todaysTotalRevenue = this.todaysTotalRevenue.toFixed(2);
+    this.todaysTotalRevenue = this.todaysTotalRevenue.toFixed();
   }
 
   findRentalsByDay() {
