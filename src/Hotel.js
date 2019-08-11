@@ -69,7 +69,7 @@ class Hotel {
         return this.currentCustomer;
        } else {
         domUpdates.displayNoUserByIDPrompt(ID);
-        return this.customer = {};
+        return this.currentCustomer = {};
        }
     })
   }
