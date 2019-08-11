@@ -3,6 +3,7 @@ const expect = chai.expect;
 
 import Hotel from '../src/Hotel';
 import Customer from '../src/Customer';
+import domUpdates from '../src/domUpdates'
 import spies from 'chai-spies';
 import testUsers from '../src/users-test-data';
 import testRooms from '../src/rooms-test-data';
@@ -13,9 +14,7 @@ let hotel;
 
 chai.use(spies);
 
-chai.spy.on(domUpdates, ['pageLoadHandler', 'displayRoomsAvailable', 'orderButtonHandler', 'roomButtonHandler', 'customerButtonHandler', 'homeButtonHandler', 'bookNowButtonHandler', 'displayDate' , 'formatDate', 'clearFields', 'displayCustomerInfo', 'displayNoBookingsMessage', 'displayCustomerBookings', 'displayNoOrderMessage', 'displayCustomerOrders', 'displayPromptToBookTonight', 'displayNoUserByNamePrompt', 'resetFields', 'displayNoUserByIDPrompt', 'displayOrdersToday', 'displayOrdersTodayTotalCost', 'displayNoOrderCostToday', 'displayAllTimeOrderCostForCustomer', 'displayNoOrderCostForCustomer', 'displayNoOrdersForSelectedDate', 'displayDateSearchedOrders', 'displayNoBookingsForSelectedDate', 'displayDateSearchedBookings', 'displayRoomsAvailable', 'displayTodaysAvailableRooms', ], () => {});
-
-
+chai.spy.on(domUpdates, ['pageLoadHandler', 'displayRoomsAvailable', 'orderButtonHandler', 'roomButtonHandler', 'customerButtonHandler', 'homeButtonHandler', 'bookNowButtonHandler', 'displayDate' , 'formatDate', 'clearFields', 'displayCustomerInfo', 'displayNoBookingsMessage', 'displayCustomerBookings', 'displayNoOrderMessage', 'displayCustomerOrders', 'displayPromptToBookTonight', 'displayNoUserByNamePrompt', 'resetFields', 'displayNoUserByIDPrompt', 'displayOrdersToday', 'displayOrdersTodayTotalCost', 'displayNoOrderCostToday', 'displayAllTimeOrderCostForCustomer', 'displayNoOrderCostForCustomer', 'displayNoOrdersForSelectedDate', 'displayDateSearchedOrders', 'displayNoBookingsForSelectedDate', 'displayDateSearchedBookings', 'displayTodaysAvailableRooms', ], () => {});
 
 let info = 
   {
@@ -41,7 +40,7 @@ describe('Hotel', function() {
 
   it('should be able to figure out the date', function() {
     hotel.getToday();
-    expect(hotel.date).to.equal('7/31/2019');
+    expect(hotel.date).to.equal('8/10/2019');
   });
 
   it('should manage all hotel guests', function() {
@@ -98,11 +97,6 @@ describe('Hotel', function() {
     expect(hotel.unformattedDate).to.equal('2019/08/28');
   });
 
-  it('should be able to find specific customers by their ID', function() {
-    hotel.findCustomerById(7);
-    expect(hotel.currentCustomer).to.eql({"id": 7, "name": "Josianne Huels"});
-  });
-
   it('should be able to let you know if a customer does not exist', function() {
     hotel.findCustomerById(55);
     expect(hotel.currentCustomer).to.eql({});
@@ -110,7 +104,7 @@ describe('Hotel', function() {
 
   it('should be able to find specific customers by their name', function() {
     hotel.findCustomerByName('Josianne Huels');
-    expect(hotel.currentCustomer).to.eql({"id": 7, "name": "Josianne Huels"});
+    expect(hotel.currentCustomer.name).to.eql("Josianne Huels");
   });
 
   it('should be able to let you know if a customer does not exist', function() {
@@ -145,7 +139,7 @@ describe('Hotel', function() {
     hotel.calculateOrdersToday('2019/10/19');
     expect(hotel.todaysTotalOrderRevenue).to.equal('7.95');
     hotel.calculateRevenueToday('2019/10/19');
-    expect(hotel.todaysTotalRevenue).to.equal('484.40');
+    expect(hotel.todaysTotalRevenue).to.equal('484');
   });
 
   it('should tell you the hotels best days of sales', function() {
@@ -155,7 +149,8 @@ describe('Hotel', function() {
 
    it('should tell you the hotels worst days of sales', function() {
     hotel.findWorstDay();
-    expect(hotel.worstDay).to.equal('2019/09/05');
+    console.log()
+    expect(hotel.worstDay).to.equal('2019/10/08');
   });
 
    it('should be able to generate a new user', function() {
@@ -165,7 +160,7 @@ describe('Hotel', function() {
 
   it("should display information to the page", function() {
     hotel.displayDatedRoomAvailability()
-    expect(domUpdates.displayTodaysAvailableRooms).to.have.been.called(1);
+    expect(domUpdates.displayRoomsAvailable).to.have.been.called(1);
   });
 
 
